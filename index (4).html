@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pedagogical Vault | Rigorous EdTech Evaluations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #000;
+            background: #fff;
+            line-height: 1.5;
+        }
+
+        /* Header */
+        .header {
+            background: #F5F5DC;
+            padding: 60px 40px 40px;
+            text-align: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .lock-icon {
+            width: 90px;
+            height: 90px;
+            flex-shrink: 0;
+        }
+
+        .brand-text {
+            text-align: left;
+        }
+
+        .brand-the {
+            font-family: 'Anton', sans-serif;
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        .brand-vault {
+            font-family: 'Anton', sans-serif;
+            font-size: 110px;
+            font-weight: 400;
+            line-height: 0.85;
+            letter-spacing: -4px;
+        }
+
+        .accent-bar {
+            width: 100%;
+            height: 12px;
+            background: #ABC649;
+            margin: 25px 0 30px;
+        }
+
+        .tagline {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            margin: 0 auto 35px;
+            max-width: 1000px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            padding: 14px 40px;
+            border: 2.5px solid #000;
+            background: transparent;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .nav-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Vault Promise Banner */
+        .vault-promise {
+            background: #000;
+            color: #fff;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        .promise-text {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .promise-text strong {
+            color: #ABC649;
+        }
+
+        /* Filters Section */
+        .filters-section {
+            background: #fff;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .filters-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 36px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            border: 2px solid #000;
+            background: white;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-btn:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: #ABC649;
+            color: white;
+            border-color: #ABC649;
+        }
+
+        /* Tools Section */
+        .tools-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px 80px;
+        }
+
+        .tools-count {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        /* Tool Cards */
+        .tool-card {
+            background: #fff;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            border-color: #ABC649;
+            box-shadow: 0 8px 24px rgba(171, 198, 73, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .tool-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .tool-name {
+            font-size: 28px;
+            font-weight: 800;
+            color: #000;
+            line-height: 1.2;
+        }
+
+        .tool-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-exemplar {
+            background: #ABC649;
+            color: white;
+        }
+
+        .badge-strong {
+            background: #2196F3;
+            color: white;
+        }
+
+        .tool-category {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #ABC649;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .tool-description {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Gatekeeper Badges */
+        .gatekeeper-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .gk-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .gk-badge::before {
+            content: '✓';
+        }
+
+        /* Rating Rows */
+        .tool-ratings {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding: 16px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rating-row {
+            display: grid;
+            grid-template-columns: 120px auto 1fr;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .rating-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+        }
+
+        .rating-bars {
+            display: flex;
+            gap: 4px;
+        }
+
+        .rating-bar {
+            width: 20px;
+            height: 12px;
+            background: #ABC649;
+            border-radius: 2px;
+        }
+
+        .rating-bar.empty {
+            background: #e0e0e0;
+        }
+
+        .rating-value {
+            font-size: 13px;
+            color: #333;
+        }
+
+        /* Standouts Section */
+        .tool-standouts {
+            background: #f9f9f9;
+            padding: 16px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ABC649;
+        }
+
+        .standouts-label {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ABC649;
+            margin-bottom: 6px;
+        }
+
+        .standouts-text {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* Score Display */
+        .tool-score-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .weighted-score {
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .score-number {
+            font-size: 24px;
+            color: #ABC649;
+        }
+
+        /* Footer Links */
+        .tool-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+
+        .tool-link {
+            font-size: 13px;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+
+        .tool-link:hover {
+            color: #ABC649;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 60px 40px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 60px 40px;
+            font-size: 18px;
+            color: #666;
+            grid-column: 1 / -1;
+        }
+
+        /* Methodology Section */
+        .methodology-section {
+            background: #f5f5f5;
+            padding: 80px 40px;
+        }
+
+        .methodology-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dimensions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .dimension-card {
+            background: #fff;
+            border: 3px solid #000;
+            padding: 28px;
+        }
+
+        .dimension-number {
+            font-family: 'Anton', sans-serif;
+            font-size: 48px;
+            color: #ABC649;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .dimension-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 18px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dimension-weight {
+            font-size: 12px;
+            font-weight: 700;
+            color: #ABC649;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dimension-desc {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Gatekeepers Section */
+        .gatekeepers-section {
+            background: #000;
+            color: #fff;
+            padding: 80px 40px;
+        }
+
+        .gatekeepers-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gatekeepers-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .gatekeepers-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 50px;
+        }
+
+        .gatekeeper-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .gatekeeper-card {
+            border: 2px solid #ABC649;
+            padding: 28px;
+        }
+
+        .gatekeeper-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .gatekeeper-name {
+            font-family: 'Anton', sans-serif;
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #ABC649;
+        }
+
+        .gatekeeper-desc {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Evidence Tiers */
+        .evidence-section {
+            background: #fff;
+            padding: 80px 40px;
+        }
+
+        .evidence-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .evidence-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .evidence-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .tier-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 140px;
+            gap: 24px;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tier-row:last-child {
+            border-bottom: none;
+        }
+
+        .tier-number {
+            font-family: 'Anton', sans-serif;
+            font-size: 36px;
+            color: #ABC649;
+        }
+
+        .tier-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .tier-info p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .tier-ceiling {
+            text-align: right;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .tier-ceiling strong {
+            display: block;
+            font-size: 18px;
+            color: #000;
+        }
+
+        /* Footer */
+        .footer {
+            background: #ABC649;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #000;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dimensions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gatekeeper-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 24px 30px;
+            }
+
+            .logo-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .brand-text {
+                text-align: center;
+            }
+
+            .brand-vault {
+                font-size: 72px;
+            }
+
+            .brand-the {
+                font-size: 24px;
+            }
+
+            .lock-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .tagline {
+                font-size: 14px;
+            }
+
+            .main-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-btn {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+            }
+
+            .tools-section {
+                padding: 40px 24px 60px;
+            }
+
+            .tool-name {
+                font-size: 24px;
+            }
+
+            .dimensions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rating-row {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+
+            .tier-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-section">
+            <svg class="lock-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <rect x="15" y="45" width="70" height="50" rx="5" fill="#000"/>
+                <path d="M 30 45 L 30 30 Q 30 10, 50 10 Q 70 10, 70 30 L 70 45" 
+                      stroke="#000" stroke-width="10" fill="none"/>
+                <circle cx="50" cy="62" r="8" fill="#fff"/>
+                <rect x="47" y="62" width="6" height="18" fill="#fff"/>
+            </svg>
+            <div class="brand-text">
+                <div class="brand-the">THE PEDAGOGICAL</div>
+                <div class="brand-vault">VAULT</div>
+            </div>
+        </div>
+        
+        <div class="accent-bar"></div>
+        
+        <p class="tagline">Rigorous EdTech Evaluations: Evidence-Based AI Tools for Instructional Design, Learning, and Equity</p>
+        
+        <nav class="main-nav">
+            <a href="#methodology" class="nav-btn">Methodology</a>
+            <a href="#tools" class="nav-btn">Browse Tools</a>
+            <a href="#gatekeepers" class="nav-btn">Gatekeepers</a>
+        </nav>
+    </header>
+
+    <!-- Vault Promise Banner -->
+    <div class="vault-promise">
+        <p class="promise-text">🔒 Every tool in the Vault has <strong>passed all 4 gatekeepers</strong> and scored <strong>70+ on our weighted rubric</strong>. No junk. Just tools that put learning first.</p>
+    </div>
+
+    <!-- Filters Section -->
+    <section class="filters-section" id="tools">
+        <h2 class="filters-title">VAULT-APPROVED TOOLS</h2>
+        <div class="filters">
+            <button class="filter-btn active" data-category="all">All Tools</button>
+            <button class="filter-btn" data-category="Content Creation">Content Creation</button>
+            <button class="filter-btn" data-category="AI Tutors">AI Tutors</button>
+            <button class="filter-btn" data-category="Assessment / Grading">Assessment / Grading</button>
+            <button class="filter-btn" data-category="Learning Experience Designers">Learning Experience</button>
+            <button class="filter-btn" data-category="Learning Analytics">Analytics</button>
+            <button class="filter-btn" data-category="Accessibility / UDL">Accessibility</button>
+            <button class="filter-btn" data-category="Communication">Communication</button>
+            <button class="filter-btn" data-category="Simulation / PBL">Simulation / PBL</button>
+            <button class="filter-btn" data-category="Data Integration">Data Integration</button>
+        </div>
+    </section>
+
+    <!-- Tools Grid -->
+    <section class="tools-section">
+        <p class="tools-count" id="toolsCount"></p>
+        <div class="tools-grid" id="toolsGrid">
+            <div class="loading">Loading tools...</div>
+        </div>
+    </section>
+
+    <!-- Gatekeepers Section -->
+    <section class="gatekeepers-section" id="gatekeepers">
+        <div class="gatekeepers-container">
+            <h2 class="gatekeepers-title">THE FOUR GATEKEEPERS</h2>
+            <p class="gatekeepers-subtitle">Every tool must pass ALL four gatekeepers before we even score it. Fail one = not in the Vault.</p>
+            
+            <div class="gatekeeper-grid">
+                <div class="gatekeeper-card">
+                    <div class="gatekeeper-icon">♿</div>
+                    <h3 class="gatekeeper-name">Accessibility</h3>
+                    <p class="gatekeeper-desc">Meets WCAG 2.1 AA standards. Has current VPAT. Works with screen readers, captions, and keyboard navigation.</p>
+                </div>
+                
+                <div class="gatekeeper-card">
+                    <div class="gatekeeper-icon">🔐</div>
+                    <h3 class="gatekeeper-name">Privacy & Security</h3>
+                    <p class="gatekeeper-desc">Clear student-data-protective policies. Data minimization, encryption, DPA availability, and incident response protocols.</p>
+                </div>
+                
+                <div class="gatekeeper-card">
+                    <div class="gatekeeper-icon">🤖</div>
+                    <h3 class="gatekeeper-name">Responsible AI</h3>
+                    <p class="gatekeeper-desc">AI use is labeled and explainable. Bias is audited. Teachers can override AI decisions. Guardrails are in place.</p>
+                </div>
+                
+                <div class="gatekeeper-card">
+                    <div class="gatekeeper-icon">🛡️</div>
+                    <h3 class="gatekeeper-name">Content & Safety</h3>
+                    <p class="gatekeeper-desc">Age-appropriate content with no harmful or manipulative patterns. No dark patterns. Student safety first.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="methodology-section" id="methodology">
+        <div class="methodology-container">
+            <h2 class="section-title">EVALUATION METHODOLOGY</h2>
+            <p class="section-subtitle">Every tool is evaluated across six research-backed dimensions with weighted scoring to ensure pedagogical integrity.</p>
+            
+            <div class="dimensions-grid">
+                <div class="dimension-card">
+                    <div class="dimension-number">01</div>
+                    <div class="dimension-title">Learning Design Integrity</div>
+                    <div class="dimension-weight">Weight: 25%</div>
+                    <div class="dimension-desc">Is the tool instructionally sound and aligned with learning science?</div>
+                </div>
+                
+                <div class="dimension-card">
+                    <div class="dimension-number">02</div>
+                    <div class="dimension-title">Instructional Efficacy</div>
+                    <div class="dimension-weight">Weight: 20%</div>
+                    <div class="dimension-desc">Is there credible evidence that it improves learning outcomes?</div>
+                </div>
+                
+                <div class="dimension-card">
+                    <div class="dimension-number">03</div>
+                    <div class="dimension-title">Feedback & Assessment</div>
+                    <div class="dimension-weight">Weight: 15%</div>
+                    <div class="dimension-desc">Does it provide meaningful, actionable feedback to learners and teachers?</div>
+                </div>
+                
+                <div class="dimension-card">
+                    <div class="dimension-number">04</div>
+                    <div class="dimension-title">Equity & Access</div>
+                    <div class="dimension-weight">Weight: 15%</div>
+                    <div class="dimension-desc">Can all students — regardless of background, ability, or language — benefit from it?</div>
+                </div>
+                
+                <div class="dimension-card">
+                    <div class="dimension-number">05</div>
+                    <div class="dimension-title">Tech & Ethical Design</div>
+                    <div class="dimension-weight">Weight: 15%</div>
+                    <div class="dimension-desc">Is the tool ethically built, transparent, and user-safe?</div>
+                </div>
+                
+                <div class="dimension-card">
+                    <div class="dimension-number">06</div>
+                    <div class="dimension-title">Integration & Usability</div>
+                    <div class="dimension-weight">Weight: 10%</div>
+                    <div class="dimension-desc">Does it integrate smoothly into classrooms and teacher workflows?</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evidence Tiers Section -->
+    <section class="evidence-section" id="evidence">
+        <div class="evidence-container">
+            <h2 class="evidence-title">EVIDENCE TIERS</h2>
+            <p class="evidence-subtitle">A tool's evidence tier caps how high it can score on Efficacy. Marketing hype can't overcome lack of research.</p>
+            
+            <div class="tier-row">
+                <div class="tier-number">0</div>
+                <div class="tier-info">
+                    <h4>Marketing Claims Only</h4>
+                    <p>No independent evidence of effectiveness</p>
+                </div>
+                <div class="tier-ceiling">Max Efficacy: <strong>1</strong></div>
+            </div>
+            
+            <div class="tier-row">
+                <div class="tier-number">1</div>
+                <div class="tier-info">
+                    <h4>Practitioner Anecdotes</h4>
+                    <p>Teacher testimonials, case studies</p>
+                </div>
+                <div class="tier-ceiling">Max Efficacy: <strong>2</strong></div>
+            </div>
+            
+            <div class="tier-row">
+                <div class="tier-number">2</div>
+                <div class="tier-info">
+                    <h4>Internal Pilot</h4>
+                    <p>Company-conducted studies or pilots</p>
+                </div>
+                <div class="tier-ceiling">Max Efficacy: <strong>3</strong></div>
+            </div>
+            
+            <div class="tier-row">
+                <div class="tier-number">3</div>
+                <div class="tier-info">
+                    <h4>Quasi-Experimental</h4>
+                    <p>Independent research with comparison groups</p>
+                </div>
+                <div class="tier-ceiling">Max Efficacy: <strong>4</strong></div>
+            </div>
+            
+            <div class="tier-row">
+                <div class="tier-number">4-5</div>
+                <div class="tier-info">
+                    <h4>RCT or Meta-Analysis</h4>
+                    <p>Gold-standard randomized controlled trials</p>
+                </div>
+                <div class="tier-ceiling">Max Efficacy: <strong>5</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">© 2025 The Pedagogical Vault — A curated arsenal of AI tools that put learning first.</p>
+    </footer>
+
+    <script>
+    // ============================================
+    // CONFIGURATION
+    // ============================================
+    
+    // WEIGHTS (25/20/15/15/15/10)
+    const WEIGHTS = {
+        ldi: 0.25,
+        efficacy: 0.20,
+        fa: 0.15,
+        equity: 0.15,
+        tech: 0.15,
+        integr: 0.10
+    };
+
+    // EVIDENCE TIER CAPS
+    const EFFICACY_CAPS = {
+        0: 1,  // Marketing claims only
+        1: 2,  // Practitioner anecdotes
+        2: 3,  // Internal pilot
+        3: 4,  // Quasi-experimental
+        4: 5,  // RCT
+        5: 5   // Meta-analysis
+    };
+
+    // MINIMUM SCORE TO BE IN VAULT
+    const MIN_SCORE = 70;
+
+    // Google Sheets CSV URL
+    const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQyeK5htBLv-v9F0E5S8s39fp9DoMWocHz63gGYQEgKYly4X0xYGpAfbyJvxHpiYfhPsvSmAZ2NKbba/pub?output=csv';
+
+    // ============================================
+    // SAMPLE DATA (Used if Google Sheet not connected)
+    // ============================================
+    const sampleTools = [
+        {
+            name: "Canva for Education",
+            category: "Content Creation",
+            audience: "both",
+            description: "Visual design platform with templates for presentations, infographics, and learning materials.",
+            standouts: "Intuitive interface, extensive template library, excellent collaboration features.",
+            cost: "Free for K-12",
+            costRating: "5",
+            dataPractices: "Strong - FERPA compliant",
+            dataRating: "5",
+            evidenceTier: "3",
+            evidenceRating: "4",
+            ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "4",
+            gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE"
+        },
+        {
+            name: "Turnitin",
+            category: "Assessment / Grading",
+            audience: "teacher",
+            description: "Plagiarism detection and AI writing detection tool with formative feedback capabilities.",
+            standouts: "Industry standard for academic integrity, helpful feedback tools for writing instruction.",
+            cost: "District license required",
+            costRating: "2",
+            dataPractices: "Strong - SOC 2 compliant",
+            dataRating: "5",
+            evidenceTier: "3",
+            evidenceRating: "4",
+            ldi: "4", efficacy: "4", fa: "5", equity: "4", tech: "4", integr: "3",
+            gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE"
+        },
+        {
+            name: "Eduaide.AI",
+            category: "Learning Experience Designers",
+            audience: "teacher",
+            description: "AI-powered tool specifically designed for educators to create resources and assessments.",
+            standouts: "Purpose-built for teachers, strong pedagogical frameworks, saves significant planning time.",
+            cost: "Subscription required",
+            costRating: "3",
+            dataPractices: "Strong - Education-focused",
+            dataRating: "4",
+            evidenceTier: "2",
+            evidenceRating: "3",
+            ldi: "5", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "4",
+            gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE"
+        },
+        {
+            name: "Khanmigo",
+            category: "AI Tutors",
+            audience: "student",
+            description: "Khan Academy's AI tutor using Socratic dialogue method to guide student learning.",
+            standouts: "Guided discovery approach, integrates with Khan Academy content, strong pedagogical foundation.",
+            cost: "$44/year or district",
+            costRating: "4",
+            dataPractices: "Strong - COPPA/FERPA",
+            dataRating: "5",
+            evidenceTier: "2",
+            evidenceRating: "3",
+            ldi: "5", efficacy: "3", fa: "5", equity: "4", tech: "5", integr: "4",
+            gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE"
+        },
+        {
+            name: "Nearpod",
+            category: "Learning Experience Designers",
+            audience: "both",
+            description: "Interactive lessons, formative checks, and student engagement platform for K-12.",
+            standouts: "Real-time feedback, gamification, VR field trips, strong engagement features.",
+            cost: "Freemium available",
+            costRating: "4",
+            dataPractices: "Strong - COPPA/FERPA",
+            dataRating: "5",
+            evidenceTier: "3",
+            evidenceRating: "4",
+            ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "5",
+            gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE"
+        },
+        {
+            name: "Gradescope",
+            category: "Assessment / Grading",
+            audience: "teacher",
+            description: "AI-assisted grading platform for assignments, exams, and coding projects.",
+            standouts: "Dramatically reduces grading time, ensures consistency, supports rubric-based feedback.",
+            cost: "Subscription or institutional",
+            costRating: "3",
+            dataPractices: "Strong - FERPA compliant",
+            dataRating: "5",
+            evidenceTier: "2",
+            evidenceRating: "3",
+            ldi: "4", efficacy: "3", fa: "5", equity: "4", tech: "4", integr: "4",
+            gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE"
+        }
+    ];
+
+    // ============================================
+    // HELPER FUNCTIONS
+    // ============================================
+    
+    // Check if tool passes all gatekeepers
+    function passesGatekeepers(tool) {
+        const accessibility = tool.gk_accessibility?.toUpperCase() === 'TRUE';
+        const privacy = tool.gk_privacy?.toUpperCase() === 'TRUE';
+        const content = tool.gk_content?.toUpperCase() === 'TRUE';
+        
+        // AI gatekeeper only required if tool is AI-powered
+        const isAI = tool.isAI?.toUpperCase() === 'TRUE';
+        const aiGatekeeper = tool.gk_ai?.toUpperCase();
+        const aiPasses = !isAI || aiGatekeeper === 'TRUE' || aiGatekeeper === 'N/A';
+        
+        return accessibility && privacy && content && aiPasses;
+    }
+
+    // Get efficacy cap based on evidence tier
+    function getEfficacyCap(tierString) {
+        // Extract number from tier string like "Tier 2 - Internal Pilot" or just "2"
+        const match = tierString?.toString().match(/\d/);
+        const tier = match ? parseInt(match[0]) : 0;
+        return EFFICACY_CAPS[tier] || 1;
+    }
+
+    // Calculate weighted score with efficacy capping
+    function calculateScore(tool) {
+        const ldi = parseFloat(tool.ldi) || 0;
+        let efficacy = parseFloat(tool.efficacy) || 0;
+        const fa = parseFloat(tool.fa) || 0;
+        const equity = parseFloat(tool.equity) || 0;
+        const tech = parseFloat(tool.tech) || 0;
+        const integr = parseFloat(tool.integr) || 0;
+        
+        // Cap efficacy based on evidence tier
+        const cap = getEfficacyCap(tool.evidenceTier || tool.evidenceRating);
+        efficacy = Math.min(efficacy, cap);
+        
+        // Calculate weighted score (0-5)
+        const weightedScore = (
+            ldi * WEIGHTS.ldi +
+            efficacy * WEIGHTS.efficacy +
+            fa * WEIGHTS.fa +
+            equity * WEIGHTS.equity +
+            tech * WEIGHTS.tech +
+            integr * WEIGHTS.integr
+        );
+        
+        // Convert to 0-100
+        return Math.round(weightedScore * 20);
+    }
+
+    // Get badge based on score
+    function getBadge(score) {
+        if (score >= 85) return { text: 'Exemplar', class: 'badge-exemplar' };
+        if (score >= 70) return { text: 'Strong', class: 'badge-strong' };
+        return null; // Won't be shown anyway
+    }
+
+    // Generate rating bars HTML
+    function ratingBars(count) {
+        const num = parseInt(count) || 0;
+        let html = '<div class="rating-bars">';
+        for (let i = 1; i <= 5; i++) {
+            html += `<div class="rating-bar ${i <= num ? '' : 'empty'}"></div>`;
+        }
+        html += '</div>';
+        return html;
+    }
+
+    // Generate gatekeeper badges
+    function gatekeeperBadges(tool) {
+        let badges = [];
+        if (tool.gk_accessibility?.toUpperCase() === 'TRUE') badges.push('Accessible');
+        if (tool.gk_privacy?.toUpperCase() === 'TRUE') badges.push('Privacy');
+        if (tool.gk_ai?.toUpperCase() === 'TRUE') badges.push('Responsible AI');
+        if (tool.gk_content?.toUpperCase() === 'TRUE') badges.push('Safe Content');
+        
+        return badges.map(b => `<span class="gk-badge">${b}</span>`).join('');
+    }
+
+    // Generate tool card HTML
+    function createToolCard(tool) {
+        const score = calculateScore(tool);
+        const badge = getBadge(score);
+        
+        return `
+            <div class="tool-card" data-category="${tool.category}" data-audience="${tool.audience}">
+                <div class="tool-header">
+                    <h2 class="tool-name">${tool.name}</h2>
+                    ${badge ? `<span class="tool-badge ${badge.class}">${badge.text}</span>` : ''}
+                </div>
+                <span class="tool-category">${tool.category}</span>
+                
+                <div class="gatekeeper-row">
+                    ${gatekeeperBadges(tool)}
+                </div>
+                
+                <p class="tool-description">${tool.description}</p>
+                
+                <div class="tool-ratings">
+                    <div class="rating-row">
+                        <span class="rating-label">Cost</span>
+                        ${ratingBars(tool.costRating)}
+                        <span class="rating-value">${tool.cost}</span>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-label">Data Practices</span>
+                        ${ratingBars(tool.dataRating)}
+                        <span class="rating-value">${tool.dataPractices}</span>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-label">Evidence Tier</span>
+                        ${ratingBars(tool.evidenceRating)}
+                        <span class="rating-value">${tool.evidenceTier}</span>
+                    </div>
+                </div>
+
+                <div class="tool-standouts">
+                    <div class="standouts-label">Stand-Outs</div>
+                    <div class="standouts-text">${tool.standouts}</div>
+                </div>
+
+                <div class="tool-score-row">
+                    <span class="weighted-score">Weighted Score:</span>
+                    <span class="score-number">${score}/100</span>
+                </div>
+
+                <div class="tool-footer">
+                    <a href="#" class="tool-link">Full Evaluation →</a>
+                    <a href="#" class="tool-link">Evidence Links →</a>
+                </div>
+            </div>
+        `;
+    }
+
+    // Parse CSV from Google Sheets
+    function parseCSV(csv) {
+        const lines = csv.split('\n');
+        const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+        const tools = [];
+        
+        for (let i = 1; i < lines.length; i++) {
+            if (!lines[i].trim()) continue;
+            
+            const values = [];
+            let current = '';
+            let inQuotes = false;
+            
+            for (let char of lines[i]) {
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    values.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            values.push(current.trim());
+            
+            const tool = {};
+            headers.forEach((header, index) => {
+                tool[header] = values[index] || '';
+            });
+            
+            if (tool.name) tools.push(tool);
+        }
+        
+        return tools;
+    }
+
+    // Filter tools for the Vault (must pass gatekeepers AND score 70+)
+    function filterForVault(tools) {
+        return tools.filter(tool => {
+            const passes = passesGatekeepers(tool);
+            const score = calculateScore(tool);
+            return passes && score >= MIN_SCORE;
+        });
+    }
+
+    // Render tools to grid
+    function renderTools(tools) {
+        const grid = document.getElementById('toolsGrid');
+        const count = document.getElementById('toolsCount');
+        
+        if (tools.length === 0) {
+            grid.innerHTML = '<div class="no-results">No tools found matching your filter.</div>';
+            count.textContent = '';
+            return;
+        }
+        
+        count.textContent = `Showing ${tools.length} Vault-approved tool${tools.length === 1 ? '' : 's'}`;
+        grid.innerHTML = tools.map(createToolCard).join('');
+    }
+
+    // Filter by category
+    function filterByCategory(tools, category) {
+        if (category === 'all') return tools;
+        return tools.filter(t => t.category === category);
+    }
+
+    // ============================================
+    // MAIN INITIALIZATION
+    // ============================================
+    let vaultTools = [];
+
+    async function loadTools() {
+        const grid = document.getElementById('toolsGrid');
+        let allTools = [];
+        
+        // Try to load from Google Sheets
+        if (SHEET_URL && SHEET_URL !== 'YOUR_GOOGLE_SHEET_CSV_URL_HERE') {
+            try {
+                const response = await fetch(SHEET_URL);
+                const csv = await response.text();
+                allTools = parseCSV(csv);
+                console.log('Loaded from Google Sheets:', allTools.length, 'tools');
+            } catch (error) {
+                console.error('Error loading from Google Sheets:', error);
+                allTools = sampleTools;
+            }
+        } else {
+            console.log('No Google Sheet configured, using sample data');
+            allTools = sampleTools;
+        }
+        
+        // Filter for Vault (gatekeepers + score)
+        vaultTools = filterForVault(allTools);
+        console.log('Vault-approved tools:', vaultTools.length);
+        
+        renderTools(vaultTools);
+    }
+
+    // Set up filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const category = btn.dataset.category;
+            const filtered = filterByCategory(vaultTools, category);
+            renderTools(filtered);
+        });
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', loadTools);
+    </script>
+</body>
+</html>
