@@ -741,15 +741,15 @@
         <h2 class="filters-title">VAULT-APPROVED TOOLS</h2>
         <div class="filters">
             <button class="filter-btn active" data-category="all">All Tools</button>
-            <button class="filter-btn" data-category="Content Creation">Content Creation</button>
-            <button class="filter-btn" data-category="AI Tutors">AI Tutors</button>
-            <button class="filter-btn" data-category="Assessment / Grading">Assessment / Grading</button>
-            <button class="filter-btn" data-category="Learning Experience Designers">Learning Experience</button>
-            <button class="filter-btn" data-category="Learning Analytics">Analytics</button>
-            <button class="filter-btn" data-category="Accessibility / UDL">Accessibility</button>
-            <button class="filter-btn" data-category="Communication">Communication</button>
+            <button class="filter-btn" data-category="Learning Experience Designers">Learning Experience Designers</button>
+            <button class="filter-btn" data-category="Assessment & Feedback Innovators">Assessment & Feedback</button>
+            <button class="filter-btn" data-category="Learning Analytics & Data Insights">Analytics & Data</button>
+            <button class="filter-btn" data-category="Inclusive Learning Aids">Inclusive Learning</button>
+            <button class="filter-btn" data-category="Multilingual Learning Allies">Multilingual</button>
+            <button class="filter-btn" data-category="Educator Copilots">Educator Copilots</button>
+            <button class="filter-btn" data-category="AI Tutors & Student Mentors">AI Tutors</button>
+            <button class="filter-btn" data-category="Family/Community Connect">Family/Community</button>
             <button class="filter-btn" data-category="Simulation / PBL">Simulation / PBL</button>
-            <button class="filter-btn" data-category="Data Integration">Data Integration</button>
         </div>
     </section>
 
@@ -937,99 +937,71 @@
     const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQyeK5htBLv-v9F0E5S8s39fp9DoMWocHz63gGYQEgKYly4X0xYGpAfbyJvxHpiYfhPsvSmAZ2NKbba/pub?output=csv';
 
     // ============================================
-    // SAMPLE DATA (Used if Google Sheet not connected)
+    // SAMPLE DATA (All 45 tools - used as backup)
     // ============================================
     const sampleTools = [
-        {
-            name: "Canva for Education",
-            category: "Content Creation",
-            audience: "both",
-            description: "Visual design platform with templates for presentations, infographics, and learning materials.",
-            standouts: "Intuitive interface, extensive template library, excellent collaboration features.",
-            cost: "Free for K-12",
-            costRating: "5",
-            dataPractices: "Strong - FERPA compliant",
-            dataRating: "5",
-            evidenceTier: "3",
-            evidenceRating: "4",
-            ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "4",
-            gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE"
-        },
-        {
-            name: "Turnitin",
-            category: "Assessment / Grading",
-            audience: "teacher",
-            description: "Plagiarism detection and AI writing detection tool with formative feedback capabilities.",
-            standouts: "Industry standard for academic integrity, helpful feedback tools for writing instruction.",
-            cost: "District license required",
-            costRating: "2",
-            dataPractices: "Strong - SOC 2 compliant",
-            dataRating: "5",
-            evidenceTier: "3",
-            evidenceRating: "4",
-            ldi: "4", efficacy: "4", fa: "5", equity: "4", tech: "4", integr: "3",
-            gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE"
-        },
-        {
-            name: "Eduaide.AI",
-            category: "Learning Experience Designers",
-            audience: "teacher",
-            description: "AI-powered tool specifically designed for educators to create resources and assessments.",
-            standouts: "Purpose-built for teachers, strong pedagogical frameworks, saves significant planning time.",
-            cost: "Subscription required",
-            costRating: "3",
-            dataPractices: "Strong - Education-focused",
-            dataRating: "4",
-            evidenceTier: "2",
-            evidenceRating: "3",
-            ldi: "5", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "4",
-            gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE"
-        },
-        {
-            name: "Khanmigo",
-            category: "AI Tutors",
-            audience: "student",
-            description: "Khan Academy's AI tutor using Socratic dialogue method to guide student learning.",
-            standouts: "Guided discovery approach, integrates with Khan Academy content, strong pedagogical foundation.",
-            cost: "$44/year or district",
-            costRating: "4",
-            dataPractices: "Strong - COPPA/FERPA",
-            dataRating: "5",
-            evidenceTier: "2",
-            evidenceRating: "3",
-            ldi: "5", efficacy: "3", fa: "5", equity: "4", tech: "5", integr: "4",
-            gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE"
-        },
-        {
-            name: "Nearpod",
-            category: "Learning Experience Designers",
-            audience: "both",
-            description: "Interactive lessons, formative checks, and student engagement platform for K-12.",
-            standouts: "Real-time feedback, gamification, VR field trips, strong engagement features.",
-            cost: "Freemium available",
-            costRating: "4",
-            dataPractices: "Strong - COPPA/FERPA",
-            dataRating: "5",
-            evidenceTier: "3",
-            evidenceRating: "4",
-            ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "5",
-            gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE"
-        },
-        {
-            name: "Gradescope",
-            category: "Assessment / Grading",
-            audience: "teacher",
-            description: "AI-assisted grading platform for assignments, exams, and coding projects.",
-            standouts: "Dramatically reduces grading time, ensures consistency, supports rubric-based feedback.",
-            cost: "Subscription or institutional",
-            costRating: "3",
-            dataPractices: "Strong - FERPA compliant",
-            dataRating: "5",
-            evidenceTier: "2",
-            evidenceRating: "3",
-            ldi: "4", efficacy: "3", fa: "5", equity: "4", tech: "4", integr: "4",
-            gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE"
-        }
+        // Learning Experience Designers (5)
+        { name: "Nearpod", category: "Learning Experience Designers", audience: "both", description: "Interactive lessons and formative checks for K-12 with VR field trips.", standouts: "Real-time feedback and gamification with strong engagement features.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Eduaide.AI", category: "Learning Experience Designers", audience: "teacher", description: "AI-powered tool for educators to create resources and assessments.", standouts: "Purpose-built for teachers with strong pedagogical frameworks.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - Education-focused", dataRating: "4", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "5", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Canva for Education", category: "Learning Experience Designers", audience: "both", description: "Visual design platform with templates for presentations and learning materials.", standouts: "Intuitive interface and extensive template library with collaboration.", cost: "Free for K-12", costRating: "5", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Pear Deck", category: "Learning Experience Designers", audience: "both", description: "Interactive presentation tool that transforms slides into formative assessments.", standouts: "Real-time student responses and teacher dashboard for engagement tracking.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "BookCreator", category: "Learning Experience Designers", audience: "both", description: "Digital book creation platform for student-authored multimedia content.", standouts: "UDL-aligned with multiple means of expression and accessibility features.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - COPPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        
+        // Assessment & Feedback Innovators (5)
+        { name: "Turnitin", category: "Assessment & Feedback Innovators", audience: "teacher", description: "Plagiarism detection and AI writing detection with formative feedback.", standouts: "Industry standard for academic integrity with writing feedback tools.", cost: "District license required", costRating: "2", dataPractices: "Strong - SOC 2 compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "5", equity: "4", tech: "4", integr: "3", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Gradescope", category: "Assessment & Feedback Innovators", audience: "teacher", description: "AI-assisted grading for assignments exams and coding projects.", standouts: "Dramatically reduces grading time with rubric-based consistency.", cost: "Subscription or institutional", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "5", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Formative", category: "Assessment & Feedback Innovators", audience: "both", description: "Real-time formative assessment with live student response tracking.", standouts: "Immediate feedback loops and intervention tools for teachers.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "5", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Kami", category: "Assessment & Feedback Innovators", audience: "both", description: "PDF annotation and digital worksheet tool with accessibility features.", standouts: "Screen reader compatible with voice comments and real-time collaboration.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Flipgrid", category: "Assessment & Feedback Innovators", audience: "both", description: "Video discussion platform for student voice and reflection.", standouts: "Reduces barriers for shy students with async video responses.", cost: "Free", costRating: "5", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        
+        // Learning Analytics & Data Insights (5)
+        { name: "Clever Analytics", category: "Learning Analytics & Data Insights", audience: "teacher", description: "Unified dashboard for app usage and engagement across district tools.", standouts: "Privacy-first design with rostering integration and usage insights.", cost: "District pricing", costRating: "3", dataPractices: "Strong - SOC 2 Type II", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "3", efficacy: "3", fa: "4", equity: "4", tech: "5", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Panorama Education", category: "Learning Analytics & Data Insights", audience: "teacher", description: "SEL and school climate surveys with actionable data dashboards.", standouts: "Research-validated instruments with equity-focused disaggregation.", cost: "District pricing", costRating: "2", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "PowerSchool Analytics", category: "Learning Analytics & Data Insights", audience: "teacher", description: "Comprehensive SIS analytics with early warning indicators.", standouts: "Cohort tracking and intervention management with privacy controls.", cost: "District pricing", costRating: "2", dataPractices: "Strong - SOC 2 compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "3", efficacy: "3", fa: "4", equity: "4", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Illuminate Education", category: "Learning Analytics & Data Insights", audience: "teacher", description: "Assessment and data platform with standards-aligned reporting.", standouts: "Item analysis and growth tracking with demographic breakdowns.", cost: "District pricing", costRating: "2", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "EdFi Alliance", category: "Learning Analytics & Data Insights", audience: "teacher", description: "Open-source data standard for K-12 education interoperability.", standouts: "Vendor-neutral with strong data governance framework.", cost: "Free open source", costRating: "5", dataPractices: "Strong - Privacy by design", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "3", efficacy: "3", fa: "3", equity: "4", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        
+        // Inclusive Learning Aids (5)
+        { name: "Texthelp Read&Write", category: "Inclusive Learning Aids", audience: "student", description: "Literacy support toolbar with text-to-speech and writing assistance.", standouts: "WCAG-compliant with dyslexia-friendly features and vocabulary support.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "5", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Bookshare", category: "Inclusive Learning Aids", audience: "student", description: "Accessible ebook library for students with print disabilities.", standouts: "Largest collection of accessible titles with multiple format options.", cost: "Free for qualifying students", costRating: "5", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "5", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Learning Ally", category: "Inclusive Learning Aids", audience: "student", description: "Human-narrated audiobook library for students with reading barriers.", standouts: "High-quality narration with curriculum-aligned content.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "5", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Snap&Read", category: "Inclusive Learning Aids", audience: "student", description: "Screenshot reader and text leveling tool for struggling readers.", standouts: "Works on any digital content with translation and study tools.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Immersive Reader", category: "Inclusive Learning Aids", audience: "both", description: "Microsoft reading accessibility tool with focus mode and translation.", standouts: "Built into Microsoft 365 with offline support and 100+ languages.", cost: "Free with Microsoft 365", costRating: "5", dataPractices: "Strong - Microsoft compliance", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "5", tech: "5", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        
+        // Multilingual Learning Allies (5)
+        { name: "Ellevation", category: "Multilingual Learning Allies", audience: "both", description: "ELL progress monitoring and instructional planning platform.", standouts: "Research-based strategies with native language support.", cost: "District pricing", costRating: "2", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "5", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Imagine Learning", category: "Multilingual Learning Allies", audience: "student", description: "Adaptive language and literacy program for English learners.", standouts: "Personalized pathways with native language scaffolding.", cost: "District pricing", costRating: "2", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 4", evidenceRating: "5", ldi: "5", efficacy: "5", fa: "4", equity: "5", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "TransACT", category: "Multilingual Learning Allies", audience: "teacher", description: "Parent communication translation in 100+ languages.", standouts: "Legally compliant translations with cultural adaptation.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Listenwise", category: "Multilingual Learning Allies", audience: "both", description: "Podcast-based listening comprehension for ELLs and all students.", standouts: "Authentic content with scaffolded supports and assessments.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "5", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Microsoft Translator", category: "Multilingual Learning Allies", audience: "both", description: "Real-time translation for classroom conversations and content.", standouts: "Live captioning with 100+ languages and offline mode.", cost: "Free", costRating: "5", dataPractices: "Strong - Microsoft compliance", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "5", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        
+        // Educator Copilots (5)
+        { name: "MagicSchool AI", category: "Educator Copilots", audience: "teacher", description: "AI assistant for lesson planning and instructional content creation.", standouts: "60+ tools purpose-built for educators with guardrails.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - Education-focused", dataRating: "4", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "5", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Diffit", category: "Educator Copilots", audience: "teacher", description: "AI tool for adapting texts to different reading levels.", standouts: "Instant differentiation with vocabulary and comprehension supports.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "5", efficacy: "3", fa: "4", equity: "5", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Curipod", category: "Educator Copilots", audience: "teacher", description: "AI-powered interactive lesson generator with student engagement.", standouts: "Creates discussion-based lessons with formative checks.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "SchoolAI", category: "Educator Copilots", audience: "teacher", description: "AI teaching assistant with customizable student-facing spaces.", standouts: "Teacher controls AI interactions with learning guardrails.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Brisk Teaching", category: "Educator Copilots", audience: "teacher", description: "Chrome extension AI for feedback and curriculum adaptation.", standouts: "Works inside existing tools with quick actions.", cost: "Free", costRating: "5", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 1", evidenceRating: "2", ldi: "4", efficacy: "2", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        
+        // AI Tutors & Student Mentors (5)
+        { name: "Khanmigo", category: "AI Tutors & Student Mentors", audience: "student", description: "Khan Academy AI tutor using Socratic dialogue method.", standouts: "Guided discovery approach with strong pedagogical foundation.", cost: "$44/year or district", costRating: "4", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "5", efficacy: "3", fa: "5", equity: "4", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Photomath", category: "AI Tutors & Student Mentors", audience: "student", description: "Camera-based math solver with step-by-step explanations.", standouts: "Shows work with multiple solution methods and conceptual hints.", cost: "Freemium available", costRating: "4", dataPractices: "Moderate - Review terms", dataRating: "3", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "3", tech: "3", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Synthesis Tutor", category: "AI Tutors & Student Mentors", audience: "student", description: "AI math tutor focused on collaborative problem-solving.", standouts: "Game-based with peer collaboration and growth mindset focus.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - COPPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "5", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Quill", category: "AI Tutors & Student Mentors", audience: "student", description: "AI-powered writing and grammar practice with immediate feedback.", standouts: "Research-backed with sentence-level practice and progress tracking.", cost: "Free", costRating: "5", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "5", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Carnegie Learning", category: "AI Tutors & Student Mentors", audience: "student", description: "Adaptive math curriculum with AI tutoring and live instruction.", standouts: "Research-proven with equity focus and teacher support.", cost: "District pricing", costRating: "2", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 4", evidenceRating: "5", ldi: "5", efficacy: "5", fa: "5", equity: "5", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        
+        // Family/Community Connect (5)
+        { name: "ParentSquare", category: "Family/Community Connect", audience: "both", description: "Unified family communication platform with translation.", standouts: "Two-way messaging in 100+ languages with engagement tracking.", cost: "District pricing", costRating: "2", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "5", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Remind", category: "Family/Community Connect", audience: "both", description: "Messaging app for teacher-family communication with translation.", standouts: "Simple interface with privacy controls and scheduled messages.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "ClassDojo", category: "Family/Community Connect", audience: "both", description: "Behavior and communication platform with family engagement.", standouts: "Real-time updates with translation and multimedia sharing.", cost: "Free", costRating: "5", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Seesaw", category: "Family/Community Connect", audience: "both", description: "Digital portfolio platform with family messaging and translation.", standouts: "Student-created content shared with families in multiple languages.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "TalkingPoints", category: "Family/Community Connect", audience: "both", description: "AI-powered family messaging with human-quality translation.", standouts: "Reaches families without smartphones via SMS with 100+ languages.", cost: "Free for teachers", costRating: "5", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "5", tech: "5", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        
+        // Simulation / PBL (5)
+        { name: "Labster", category: "Simulation / PBL", audience: "student", description: "Virtual science labs with immersive simulations.", standouts: "Full lab experiences without equipment with immediate feedback.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "PhET Simulations", category: "Simulation / PBL", audience: "student", description: "Free interactive math and science simulations from CU Boulder.", standouts: "Research-based with accessibility features and teacher resources.", cost: "Free", costRating: "5", dataPractices: "Strong - No data collected", dataRating: "5", evidenceTier: "Tier 4", evidenceRating: "5", ldi: "5", efficacy: "5", fa: "4", equity: "5", tech: "5", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Gizmos", category: "Simulation / PBL", audience: "student", description: "Interactive STEM simulations with inquiry-based lessons.", standouts: "400+ simulations with assessment and lesson materials.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Minecraft Education", category: "Simulation / PBL", audience: "student", description: "Game-based learning environment for cross-curricular projects.", standouts: "Engaging platform with collaboration and coding integration.", cost: "Included with Microsoft 365", costRating: "5", dataPractices: "Strong - Microsoft compliance", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "BioDigital Human", category: "Simulation / PBL", audience: "student", description: "3D interactive anatomy and health visualization platform.", standouts: "Medical-grade accuracy with accessibility and curriculum alignment.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" }
     ];
 
     // ============================================
@@ -1243,26 +1215,33 @@
     async function loadTools() {
         const grid = document.getElementById('toolsGrid');
         let allTools = [];
+        let usingSheets = false;
         
         // Try to load from Google Sheets
         if (SHEET_URL && SHEET_URL !== 'YOUR_GOOGLE_SHEET_CSV_URL_HERE') {
             try {
+                console.log('Attempting to load from Google Sheets...');
                 const response = await fetch(SHEET_URL);
+                if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                }
                 const csv = await response.text();
                 allTools = parseCSV(csv);
-                console.log('Loaded from Google Sheets:', allTools.length, 'tools');
+                usingSheets = true;
+                console.log('✅ Loaded from Google Sheets:', allTools.length, 'tools');
             } catch (error) {
-                console.error('Error loading from Google Sheets:', error);
+                console.log('⚠️ Google Sheets unavailable, using built-in data. Error:', error.message);
+                console.log('This is normal if viewing locally or if sheet access is restricted.');
                 allTools = sampleTools;
             }
         } else {
-            console.log('No Google Sheet configured, using sample data');
+            console.log('No Google Sheet configured, using built-in sample data');
             allTools = sampleTools;
         }
         
         // Filter for Vault (gatekeepers + score)
         vaultTools = filterForVault(allTools);
-        console.log('Vault-approved tools:', vaultTools.length);
+        console.log('Vault-approved tools:', vaultTools.length, usingSheets ? '(from Google Sheets)' : '(built-in data)');
         
         renderTools(vaultTools);
     }
