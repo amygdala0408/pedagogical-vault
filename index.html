@@ -26,32 +26,34 @@
             --color-text-muted: #666666;
             --color-bg: #ffffff;
             --color-bg-hero: #F5F5DC;
-            --color-bg-card: #ffffff;
-            --color-border: #e5e5e5;
-            --color-border-hover: #ABC649;
+            --color-bg-card: #f8f8f8;
+            --color-border: #ddd;
+            --color-border-hover: #000;
+            --color-bar-filled: #000000;
+            --color-bar-empty: #e0e0e0;
             
             /* Type Scale */
-            --font-size-xs: 0.75rem;      /* 12px */
-            --font-size-sm: 0.875rem;     /* 14px */
-            --font-size-base: 1rem;        /* 16px */
+            --font-size-xs: 0.625rem;      /* 10px */
+            --font-size-sm: 0.75rem;       /* 12px */
+            --font-size-base: 0.875rem;    /* 14px */
+            --font-size-md: 1rem;          /* 16px */
             --font-size-lg: 1.125rem;      /* 18px */
             --font-size-xl: 1.25rem;       /* 20px */
             --font-size-2xl: 1.5rem;       /* 24px */
-            --font-size-3xl: 1.875rem;     /* 30px */
-            --font-size-4xl: 2.25rem;      /* 36px */
-            --font-size-5xl: 3rem;         /* 48px */
-            --font-size-6xl: 4rem;         /* 64px */
-            --font-size-hero: 6.875rem;    /* 110px */
+            --font-size-3xl: 2rem;         /* 32px */
+            --font-size-4xl: 2.5rem;       /* 40px */
+            --font-size-5xl: 3.5rem;       /* 56px */
+            --font-size-hero: 5rem;        /* 80px */
             
             /* Spacing Scale */
             --space-xs: 0.25rem;    /* 4px */
             --space-sm: 0.5rem;     /* 8px */
-            --space-md: 1rem;       /* 16px */
-            --space-lg: 1.5rem;     /* 24px */
-            --space-xl: 2rem;       /* 32px */
-            --space-2xl: 2.5rem;    /* 40px */
-            --space-3xl: 3rem;      /* 48px */
-            --space-4xl: 4rem;      /* 64px */
+            --space-md: 0.75rem;    /* 12px */
+            --space-lg: 1rem;       /* 16px */
+            --space-xl: 1.25rem;    /* 20px */
+            --space-2xl: 1.5rem;    /* 24px */
+            --space-3xl: 2rem;      /* 32px */
+            --space-4xl: 3rem;      /* 48px */
             
             /* Font Families */
             --font-heading: 'Oswald', 'Arial Narrow', 'Helvetica Condensed', 'Impact', sans-serif;
@@ -59,20 +61,6 @@
             
             /* Transitions */
             --transition-base: all 0.3s ease;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 8px 24px rgba(171, 198, 73, 0.15);
-            
-            /* Border Radius */
-            --radius-sm: 0.25rem;
-            --radius-md: 0.5rem;
-            --radius-lg: 0.75rem;
-            
-            /* Max Widths */
-            --max-width-content: 1200px;
-            --max-width-text: 1000px;
         }
         
         /* ========================================
@@ -96,76 +84,79 @@
            ======================================== */
         .hero {
             background: var(--color-bg-hero);
-            padding: var(--space-4xl) var(--space-2xl) var(--space-2xl);
-            text-align: center;
+            padding: var(--space-4xl) var(--space-3xl) var(--space-3xl);
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .logo-section {
             display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            gap: var(--space-lg);
-            margin-bottom: var(--space-xl);
+            align-items: center;
+            gap: var(--space-3xl);
+            margin-bottom: var(--space-2xl);
         }
         
         .lock-icon {
-            width: 90px;
-            height: 90px;
+            width: 200px;
+            height: 280px;
             flex-shrink: 0;
         }
         
         .brand-text {
-            text-align: left;
+            flex: 1;
         }
         
         .brand-the {
             font-family: var(--font-heading);
             font-size: var(--font-size-3xl);
             font-weight: 400;
-            letter-spacing: 0.125rem;
+            letter-spacing: 0.15rem;
             line-height: 1;
-            margin-bottom: var(--space-xs);
+            margin-bottom: var(--space-sm);
+            text-transform: uppercase;
         }
         
         .brand-vault {
             font-family: var(--font-heading);
             font-size: var(--font-size-hero);
             font-weight: 400;
-            line-height: 0.85;
-            letter-spacing: -0.25rem;
+            line-height: 0.9;
+            letter-spacing: -0.1rem;
+            text-transform: uppercase;
         }
         
         .accent-bar {
             width: 100%;
-            height: 12px;
+            height: 10px;
             background: var(--color-primary);
-            margin: var(--space-lg) 0 var(--space-xl);
+            margin: var(--space-2xl) 0;
         }
         
         .tagline {
             font-size: var(--font-size-base);
-            font-weight: 600;
-            letter-spacing: 0.05rem;
-            margin: 0 auto var(--space-2xl);
-            max-width: var(--max-width-text);
-            line-height: 1.5;
+            font-weight: 700;
+            letter-spacing: 0.03rem;
+            margin-bottom: var(--space-3xl);
+            line-height: 1.6;
             text-transform: uppercase;
         }
         
         .main-nav {
             display: flex;
-            gap: var(--space-lg);
-            justify-content: center;
+            gap: var(--space-xl);
             flex-wrap: wrap;
         }
         
         .nav-btn {
-            padding: var(--space-md) var(--space-2xl);
-            border: 2.5px solid var(--color-text);
+            padding: var(--space-lg) var(--space-3xl);
+            border: 2px solid var(--color-text);
             background: transparent;
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-base);
             font-weight: 700;
-            letter-spacing: 0.09375rem;
+            letter-spacing: 0.1rem;
             cursor: pointer;
             transition: var(--transition-base);
             text-decoration: none;
@@ -176,7 +167,7 @@
         .nav-btn:hover,
         .nav-btn:focus {
             background: var(--color-text);
-            color: var(--color-bg);
+            color: var(--color-bg-hero);
             outline: 2px solid var(--color-primary);
             outline-offset: 2px;
         }
@@ -185,23 +176,29 @@
            CARD GRID SECTION
            ======================================== */
         .cards-section {
-            max-width: var(--max-width-content);
+            background: var(--color-bg);
+            padding: var(--space-4xl) var(--space-3xl);
+        }
+        
+        .cards-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: var(--space-4xl) var(--space-2xl);
         }
         
         .section-title {
             font-family: var(--font-heading);
             font-size: var(--font-size-4xl);
             text-align: center;
-            margin-bottom: var(--space-xl);
-            letter-spacing: 0.0625rem;
+            margin-bottom: var(--space-4xl);
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            font-weight: 700;
         }
         
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-xl);
+            gap: var(--space-3xl);
         }
         
         /* ========================================
@@ -210,141 +207,152 @@
         .card {
             background: var(--color-bg-card);
             border: 2px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-xl);
+            padding: var(--space-3xl);
             transition: var(--transition-base);
         }
         
         .card:hover,
         .card:focus-within {
             border-color: var(--color-border-hover);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
         }
         
         .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: var(--space-md);
+            margin-bottom: var(--space-xl);
         }
         
         .card-title {
+            font-family: var(--font-heading);
             font-size: var(--font-size-3xl);
-            font-weight: 800;
+            font-weight: 700;
             color: var(--color-text);
-            line-height: 1.2;
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
         }
         
         .card-badge {
-            padding: var(--space-sm) var(--space-md);
-            border-radius: 1.25rem;
-            font-size: var(--font-size-xs);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.03125rem;
-            background: var(--color-primary);
-            color: white;
-            white-space: nowrap;
-        }
-        
-        .card-badge.badge-exemplar {
-            background: var(--color-primary);
-        }
-        
-        .card-badge.badge-strong {
-            background: var(--color-secondary);
-        }
-        
-        .card-category {
             display: inline-block;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: 4px;
             font-size: var(--font-size-xs);
             font-weight: 700;
-            color: var(--color-primary);
             text-transform: uppercase;
-            letter-spacing: 0.0625rem;
+            letter-spacing: 0.05rem;
+            background: var(--color-primary);
+            color: var(--color-text);
+        }
+        
+        .card-metadata {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .metadata-row {
+            display: flex;
+            align-items: center;
             margin-bottom: var(--space-md);
+            gap: var(--space-lg);
+        }
+        
+        .metadata-label {
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+            min-width: 120px;
+        }
+        
+        .rating-bars {
+            display: flex;
+            gap: var(--space-xs);
+            flex: 1;
+        }
+        
+        .rating-bar {
+            width: 20px;
+            height: 16px;
+            background: var(--color-bar-filled);
+        }
+        
+        .rating-bar.empty {
+            background: var(--color-bar-empty);
+        }
+        
+        .metadata-value {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-light);
+            flex: 1;
         }
         
         .card-description {
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-base);
             color: var(--color-text-light);
             line-height: 1.6;
-            margin-bottom: var(--space-lg);
+            margin-bottom: var(--space-xl);
         }
         
-        .card-features {
-            list-style: none;
-        }
-        
-        .card-features li {
+        .card-exemplar {
             font-size: var(--font-size-sm);
-            color: var(--color-text-muted);
-            padding-left: var(--space-lg);
-            position: relative;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
             margin-bottom: var(--space-sm);
         }
         
-        .card-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--color-primary);
-            font-weight: bold;
+        .exemplar-text {
+            font-size: var(--font-size-base);
+            color: var(--color-text-light);
+            line-height: 1.6;
         }
         
         /* ========================================
            RESPONSIVE DESIGN
            ======================================== */
         
-        /* Tablet (768px - 1023px) */
+        /* Tablet (max-width: 1023px) */
         @media (max-width: 1023px) {
             :root {
-                --font-size-hero: 5rem;
+                --font-size-hero: 4rem;
+            }
+            
+            .lock-icon {
+                width: 140px;
+                height: 200px;
             }
             
             .cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-lg);
-            }
-            
-            .hero {
-                padding: var(--space-3xl) var(--space-lg) var(--space-xl);
+                gap: var(--space-2xl);
             }
         }
         
         /* Mobile (<768px) */
         @media (max-width: 767px) {
             :root {
-                --font-size-hero: 3.5rem;
+                --font-size-hero: 3rem;
                 --font-size-3xl: 1.5rem;
             }
             
             .hero {
-                padding: var(--space-2xl) var(--space-md) var(--space-xl);
+                padding: var(--space-3xl) var(--space-xl);
             }
             
             .logo-section {
                 flex-direction: column;
                 align-items: center;
-                gap: var(--space-md);
+                gap: var(--space-xl);
+            }
+            
+            .lock-icon {
+                width: 100px;
+                height: 140px;
             }
             
             .brand-text {
                 text-align: center;
             }
             
-            .brand-vault {
-                font-size: 4.5rem;
-            }
-            
             .brand-the {
-                font-size: var(--font-size-2xl);
-            }
-            
-            .lock-icon {
-                width: 60px;
-                height: 60px;
+                font-size: var(--font-size-xl);
             }
             
             .tagline {
@@ -357,27 +365,34 @@
             }
             
             .nav-btn {
-                width: 100%;
-                max-width: 280px;
-                margin: 0 auto;
                 text-align: center;
             }
             
             .cards-section {
-                padding: var(--space-xl) var(--space-md);
+                padding: var(--space-3xl) var(--space-lg);
             }
             
             .cards-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-lg);
+                gap: var(--space-2xl);
             }
             
             .card {
-                padding: var(--space-lg);
+                padding: var(--space-xl);
             }
             
             .card-title {
                 font-size: var(--font-size-2xl);
+            }
+            
+            .metadata-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-sm);
+            }
+            
+            .metadata-label {
+                min-width: auto;
             }
         }
         
@@ -407,114 +422,200 @@
     
     <!-- Hero Section -->
     <header class="hero" role="banner">
-        <div class="logo-section">
-            <svg class="lock-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lock icon representing security and trust">
-                <rect x="15" y="45" width="70" height="50" rx="5" fill="#000"/>
-                <path d="M 30 45 L 30 30 Q 30 10, 50 10 Q 70 10, 70 30 L 70 45" 
-                      stroke="#000" stroke-width="10" fill="none"/>
-                <circle cx="50" cy="62" r="8" fill="#fff"/>
-                <rect x="47" y="62" width="6" height="18" fill="#fff"/>
-            </svg>
-            <div class="brand-text">
-                <div class="brand-the">THE PEDAGOGICAL</div>
-                <h1 class="brand-vault">VAULT</h1>
+        <div class="hero-container">
+            <div class="logo-section">
+                <svg class="lock-icon" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lock icon representing security and trust">
+                    <!-- Lock body -->
+                    <rect x="50" y="180" width="200" height="200" rx="8" fill="#000"/>
+                    <!-- Shackle -->
+                    <path d="M 80 180 L 80 120 Q 80 40, 150 40 Q 220 40, 220 120 L 220 180" 
+                          stroke="#000" stroke-width="30" fill="none" stroke-linecap="square"/>
+                    <!-- Keyhole - outer circle -->
+                    <circle cx="150" cy="250" r="30" fill="#F5F5DC"/>
+                    <!-- Keyhole - slot -->
+                    <rect x="135" y="250" width="30" height="80" rx="4" fill="#F5F5DC"/>
+                    <!-- Keyhole - pointed bottom -->
+                    <polygon points="135,330 165,330 150,350" fill="#F5F5DC"/>
+                </svg>
+                <div class="brand-text">
+                    <div class="brand-the">THE PEDAGOGICAL</div>
+                    <h1 class="brand-vault">VAULT</h1>
+                </div>
             </div>
+            
+            <div class="accent-bar" role="presentation" aria-hidden="true"></div>
+            
+            <p class="tagline">RIGOROUS EDTECH EVALUATIONS: EVIDENCE-BASED AI TOOLS FOR INSTRUCTIONAL DESIGN, LEARNING, AND EQUITY</p>
+            
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <a href="#about" class="nav-btn">About</a>
+                <a href="#categories" class="nav-btn">Categories</a>
+                <a href="#methodology" class="nav-btn">Methodology</a>
+            </nav>
         </div>
-        
-        <div class="accent-bar" role="presentation" aria-hidden="true"></div>
-        
-        <p class="tagline">Rigorous EdTech Evaluations: Evidence-Based AI Tools for Instructional Design, Learning, and Equity</p>
-        
-        <nav class="main-nav" role="navigation" aria-label="Main navigation">
-            <a href="#methodology" class="nav-btn">Methodology</a>
-            <a href="#tools" class="nav-btn">Browse Tools</a>
-            <a href="#about" class="nav-btn">About</a>
-        </nav>
     </header>
     
     <!-- Card Grid Section -->
-    <main id="tools">
+    <main id="categories">
         <section class="cards-section" aria-labelledby="tools-heading">
-            <h2 id="tools-heading" class="section-title">VAULT-APPROVED TOOLS</h2>
-            
-            <div class="cards-grid">
+            <div class="cards-container">
+                <h2 id="tools-heading" class="section-title">Vault-Approved Tools</h2>
                 
-                <!-- Card 1: Khanmigo -->
-                <article class="card" aria-labelledby="card1-title">
-                    <div class="card-header">
-                        <h3 id="card1-title" class="card-title">Khanmigo</h3>
-                        <span class="card-badge badge-exemplar" aria-label="Exemplar rating">Exemplar</span>
-                    </div>
-                    <span class="card-category">AI Tutors</span>
-                    <p class="card-description">
-                        AI-powered tutor built on Khan Academy's pedagogy. Socratic questioning, 
-                        personalized hints, and formative assessment integrated into learning paths.
-                    </p>
-                    <ul class="card-features" aria-label="Key features">
-                        <li>Evidence-based learning science</li>
-                        <li>WCAG 2.1 AA compliant</li>
-                        <li>Strong privacy protections</li>
-                        <li>Transparent AI decision-making</li>
-                    </ul>
-                </article>
-                
-                <!-- Card 2: Gradescope -->
-                <article class="card" aria-labelledby="card2-title">
-                    <div class="card-header">
-                        <h3 id="card2-title" class="card-title">Gradescope</h3>
-                        <span class="card-badge badge-strong" aria-label="Strong rating">Strong</span>
-                    </div>
-                    <span class="card-category">Assessment / Grading</span>
-                    <p class="card-description">
-                        AI-assisted grading platform for assignments, exams, and coding projects. 
-                        Dramatically reduces grading time while ensuring consistency.
-                    </p>
-                    <ul class="card-features" aria-label="Key features">
-                        <li>Rubric-based feedback</li>
-                        <li>FERPA compliant</li>
-                        <li>Supports multiple formats</li>
-                        <li>Analytics dashboard</li>
-                    </ul>
-                </article>
-                
-                <!-- Card 3: Nearpod -->
-                <article class="card" aria-labelledby="card3-title">
-                    <div class="card-header">
-                        <h3 id="card3-title" class="card-title">Nearpod</h3>
-                        <span class="card-badge badge-strong" aria-label="Strong rating">Strong</span>
-                    </div>
-                    <span class="card-category">Learning Experience</span>
-                    <p class="card-description">
-                        Interactive lessons, formative checks, and student engagement platform for K-12. 
-                        Real-time feedback with gamification features.
-                    </p>
-                    <ul class="card-features" aria-label="Key features">
-                        <li>VR field trips</li>
-                        <li>Real-time engagement data</li>
-                        <li>COPPA/FERPA compliant</li>
-                        <li>Seamless LMS integration</li>
-                    </ul>
-                </article>
-                
-                <!-- Card 4: Turnitin -->
-                <article class="card" aria-labelledby="card4-title">
-                    <div class="card-header">
-                        <h3 id="card4-title" class="card-title">Turnitin</h3>
-                        <span class="card-badge badge-strong" aria-label="Strong rating">Strong</span>
-                    </div>
-                    <span class="card-category">Academic Integrity</span>
-                    <p class="card-description">
-                        Plagiarism detection and AI writing detection tool. Helps maintain 
-                        academic integrity while supporting original student work.
-                    </p>
-                    <ul class="card-features" aria-label="Key features">
-                        <li>AI writing detection</li>
-                        <li>Extensive database comparison</li>
-                        <li>Feedback Studio integration</li>
-                        <li>Clear similarity reports</li>
-                    </ul>
-                </article>
-                
+                <div class="cards-grid">
+                    
+                    <!-- Card 1: Instructional Blueprints -->
+                    <article class="card" aria-labelledby="card1-title">
+                        <div class="card-header">
+                            <h3 id="card1-title" class="card-title">INSTRUCTIONAL BLUEPRINTS</h3>
+                            <span class="card-badge">LEARNING EXPERIENCE DESIGNERS</span>
+                        </div>
+                        
+                        <div class="card-metadata">
+                            <div class="metadata-row">
+                                <span class="metadata-label">COST</span>
+                                <div class="rating-bars" role="img" aria-label="Cost rating: 4 out of 5">
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar empty"></div>
+                                </div>
+                            </div>
+                            <div class="metadata-row">
+                                <span class="metadata-label">DATA PRACTICES</span>
+                                <div class="metadata-value">Strong - FERPA compliant</div>
+                            </div>
+                            <div class="metadata-row">
+                                <span class="metadata-label">EVIDENCE LINKS</span>
+                                <div class="metadata-value">Tier 2 - Internal studies</div>
+                            </div>
+                        </div>
+                        
+                        <p class="card-description">
+                            Produces project-based lesson sequences with UDL-aligned pedagogical strategies.
+                        </p>
+                        
+                        <div class="card-exemplar">EXEMPLARY BECAUSE</div>
+                        <p class="exemplar-text">
+                            Integrates evidence-based instructional design principles with accessibility frameworks.
+                        </p>
+                    </article>
+                    
+                    <!-- Card 2: Learning Analytics -->
+                    <article class="card" aria-labelledby="card2-title">
+                        <div class="card-header">
+                            <h3 id="card2-title" class="card-title">LEARNING ANALYTICS</h3>
+                            <span class="card-badge">LEARNING ANALYTICS</span>
+                        </div>
+                        
+                        <div class="card-metadata">
+                            <div class="metadata-row">
+                                <span class="metadata-label">COST</span>
+                                <div class="rating-bars" role="img" aria-label="Cost rating: 5 out of 5">
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                </div>
+                            </div>
+                            <div class="metadata-row">
+                                <span class="metadata-label">DATA PRACTICES</span>
+                                <div class="metadata-value">Excellent - Privacy first</div>
+                            </div>
+                            <div class="metadata-row">
+                                <span class="metadata-label">EVIDENCE LINKS</span>
+                                <div class="metadata-value">Tier 3 - Peer reviewed</div>
+                            </div>
+                        </div>
+                        
+                        <p class="card-description">
+                            Synthesizes learning data from multiple sources to provide evidence-based insights.
+                        </p>
+                        
+                        <div class="card-exemplar">EXEMPLARY BECAUSE</div>
+                        <p class="exemplar-text">
+                            Uses transparent algorithms and provides actionable recommendations for educators.
+                        </p>
+                    </article>
+                    
+                    <!-- Card 3: Special Education -->
+                    <article class="card" aria-labelledby="card3-title">
+                        <div class="card-header">
+                            <h3 id="card3-title" class="card-title">SPECIAL EDUCATION</h3>
+                            <span class="card-badge">SPECIAL EDUCATION</span>
+                        </div>
+                        
+                        <div class="card-metadata">
+                            <div class="metadata-row">
+                                <span class="metadata-label">COST</span>
+                                <div class="rating-bars" role="img" aria-label="Cost rating: 3 out of 5">
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar empty"></div>
+                                    <div class="rating-bar empty"></div>
+                                </div>
+                            </div>
+                            <div class="metadata-row">
+                                <span class="metadata-label">DATA PRACTICES</span>
+                                <div class="metadata-value">Strong - IDEA compliant</div>
+                            </div>
+                            <div class="metadata-row">
+                                <span class="metadata-label">EVIDENCE LINKS</span>
+                                <div class="metadata-value">Tier 2 - Mixed methods</div>
+                            </div>
+                        </div>
+                        
+                        <p class="card-description">
+                            Produces strategies to support diverse learners with accommodations and modifications.
+                        </p>
+                        
+                        <div class="card-exemplar">EXEMPLARY BECAUSE</div>
+                        <p class="exemplar-text">
+                            Aligns with IEP requirements and provides evidence-based intervention strategies.
+                        </p>
+                    </article>
+                    
+                    <!-- Card 4: AI Mentoring -->
+                    <article class="card" aria-labelledby="card4-title">
+                        <div class="card-header">
+                            <h3 id="card4-title" class="card-title">AI MENTORING</h3>
+                            <span class="card-badge">AI TUTORS</span>
+                        </div>
+                        
+                        <div class="card-metadata">
+                            <div class="metadata-row">
+                                <span class="metadata-label">COST</span>
+                                <div class="rating-bars" role="img" aria-label="Cost rating: 5 out of 5">
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                    <div class="rating-bar"></div>
+                                </div>
+                            </div>
+                            <div class="metadata-row">
+                                <span class="metadata-label">DATA PRACTICES</span>
+                                <div class="metadata-value">Strong - Transparent AI</div>
+                            </div>
+                            <div class="metadata-row">
+                                <span class="metadata-label">EVIDENCE LINKS</span>
+                                <div class="metadata-value">Tier 3 - RCT studies</div>
+                            </div>
+                        </div>
+                        
+                        <p class="card-description">
+                            Offers personalized writing feedback, study tips, and just-in-time support.
+                        </p>
+                        
+                        <div class="card-exemplar">EXEMPLARY BECAUSE</div>
+                        <p class="exemplar-text">
+                            Provides scaffolded support with clear explanations and promotes metacognition.
+                        </p>
+                    </article>
+                    
+                </div>
             </div>
         </section>
     </main>
