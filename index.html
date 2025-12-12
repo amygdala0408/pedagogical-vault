@@ -4,621 +4,1262 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Pedagogical Vault | Rigorous EdTech Evaluations</title>
-    
-    <!-- 
-    Optional: To use Google Fonts online, uncomment the following line:
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    The CSS below uses system/web-safe fonts as fallbacks for offline use.
-    -->
-    
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ========================================
-           CSS VARIABLES - Design Tokens
-           ======================================== */
-        :root {
-            /* Colors */
-            --color-primary: #ABC649;
-            --color-primary-dark: #8fa935;
-            --color-secondary: #2196F3;
-            --color-text: #000000;
-            --color-text-light: #333333;
-            --color-text-muted: #666666;
-            --color-bg: #ffffff;
-            --color-bg-hero: #F5F5DC;
-            --color-bg-card: #f8f8f8;
-            --color-border: #ddd;
-            --color-border-hover: #000;
-            --color-bar-filled: #000000;
-            --color-bar-empty: #999999;
-            
-            /* Type Scale */
-            --font-size-xs: 0.625rem;      /* 10px */
-            --font-size-sm: 0.75rem;       /* 12px */
-            --font-size-base: 0.875rem;    /* 14px */
-            --font-size-md: 1rem;          /* 16px */
-            --font-size-lg: 1.125rem;      /* 18px */
-            --font-size-xl: 1.25rem;       /* 20px */
-            --font-size-2xl: 1.5rem;       /* 24px */
-            --font-size-3xl: 2rem;         /* 32px */
-            --font-size-4xl: 2.5rem;       /* 40px */
-            --font-size-5xl: 3.5rem;       /* 56px */
-            --font-size-hero: 5rem;        /* 80px */
-            
-            /* Spacing Scale */
-            --space-xs: 0.25rem;    /* 4px */
-            --space-sm: 0.5rem;     /* 8px */
-            --space-md: 0.75rem;    /* 12px */
-            --space-lg: 1rem;       /* 16px */
-            --space-xl: 1.25rem;    /* 20px */
-            --space-2xl: 1.5rem;    /* 24px */
-            --space-3xl: 2rem;      /* 32px */
-            --space-4xl: 3rem;      /* 48px */
-            
-            /* Font Families */
-            --font-heading: 'Oswald', 'Arial Narrow', 'Helvetica Condensed', 'Impact', sans-serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            
-            /* Transitions */
-            --transition-base: all 0.3s ease;
-        }
-        
-        /* ========================================
-           BASE STYLES
-           ======================================== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: var(--font-body);
-            color: var(--color-text);
-            background: var(--color-bg);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #000;
+            background: #fff;
             line-height: 1.5;
         }
-        
-        /* ========================================
-           HERO SECTION
-           ======================================== */
-        .hero {
-            background: var(--color-bg-hero);
-            padding: var(--space-4xl) var(--space-3xl) var(--space-3xl);
+
+        /* Header */
+        .header {
+            background: #F5F5DC;
+            padding: 60px 40px 40px;
+            text-align: center;
         }
-        
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
+
         .logo-section {
             display: flex;
-            align-items: center;
-            gap: var(--space-3xl);
-            margin-bottom: var(--space-2xl);
+            align-items: flex-start;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
         }
-        
+
         .lock-icon {
-            width: 200px;
-            height: 280px;
+            width: 90px;
+            height: 90px;
             flex-shrink: 0;
         }
-        
+
         .brand-text {
-            flex: 1;
+            text-align: left;
         }
-        
+
         .brand-the {
-            font-family: var(--font-heading);
-            font-size: var(--font-size-3xl);
+            font-family: 'Anton', sans-serif;
+            font-size: 32px;
             font-weight: 400;
-            letter-spacing: 0.15rem;
+            letter-spacing: 2px;
             line-height: 1;
-            margin-bottom: var(--space-sm);
-            text-transform: uppercase;
+            margin-bottom: 2px;
         }
-        
+
         .brand-vault {
-            font-family: var(--font-heading);
-            font-size: var(--font-size-hero);
+            font-family: 'Anton', sans-serif;
+            font-size: 110px;
             font-weight: 400;
-            line-height: 0.9;
-            letter-spacing: -0.1rem;
-            text-transform: uppercase;
+            line-height: 0.85;
+            letter-spacing: -4px;
         }
-        
+
         .accent-bar {
             width: 100%;
-            height: 10px;
-            background: var(--color-primary);
-            margin: var(--space-2xl) 0;
+            height: 12px;
+            background: #ABC649;
+            margin: 25px 0 30px;
         }
-        
+
         .tagline {
-            font-size: var(--font-size-base);
-            font-weight: 700;
-            letter-spacing: 0.03rem;
-            margin-bottom: var(--space-3xl);
-            line-height: 1.6;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            margin: 0 auto 35px;
+            max-width: 1000px;
+            line-height: 1.5;
             text-transform: uppercase;
         }
-        
+
         .main-nav {
             display: flex;
-            gap: var(--space-xl);
+            gap: 25px;
+            justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         .nav-btn {
-            padding: var(--space-lg) var(--space-3xl);
-            border: 2px solid var(--color-text);
+            padding: 14px 40px;
+            border: 2.5px solid #000;
             background: transparent;
-            font-size: var(--font-size-base);
+            font-size: 15px;
             font-weight: 700;
-            letter-spacing: 0.1rem;
+            letter-spacing: 1.5px;
             cursor: pointer;
-            transition: var(--transition-base);
+            transition: all 0.3s ease;
             text-decoration: none;
-            color: var(--color-text);
+            color: #000;
             text-transform: uppercase;
         }
-        
-        .nav-btn:hover,
-        .nav-btn:focus {
-            background: var(--color-text);
-            color: var(--color-bg-hero);
-            outline: 2px solid var(--color-primary);
-            outline-offset: 2px;
+
+        .nav-btn:hover {
+            background: #000;
+            color: #fff;
         }
-        
-        /* ========================================
-           CARD GRID SECTION
-           ======================================== */
-        .cards-section {
-            background: var(--color-bg);
-            padding: var(--space-4xl) var(--space-3xl);
+
+        /* Vault Promise Banner */
+        .vault-promise {
+            background: #000;
+            color: #fff;
+            padding: 20px 40px;
+            text-align: center;
         }
-        
-        .cards-container {
+
+        .promise-text {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .promise-text strong {
+            color: #ABC649;
+        }
+
+        /* Filters Section */
+        .filters-section {
+            background: #fff;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .filters-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 36px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: var(--font-size-4xl);
+
+        .filter-btn {
+            padding: 10px 24px;
+            border: 2px solid #000;
+            background: white;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-btn:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: #ABC649;
+            color: white;
+            border-color: #ABC649;
+        }
+
+        /* Tools Section */
+        .tools-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px 80px;
+        }
+
+        .tools-count {
             text-align: center;
-            margin-bottom: var(--space-4xl);
-            letter-spacing: 0.1rem;
-            text-transform: uppercase;
-            font-weight: 700;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
         }
-        
-        .cards-grid {
+
+        .tools-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-3xl);
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 30px;
         }
-        
-        /* ========================================
-           CARD COMPONENT
-           ======================================== */
-        .card {
-            background: var(--color-bg-card);
-            border: 2px solid var(--color-border);
-            padding: var(--space-3xl);
-            transition: var(--transition-base);
+
+        /* Tool Cards */
+        .tool-card {
+            background: #fff;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
         }
-        
-        .card:hover,
-        .card:focus-within {
-            border-color: var(--color-border-hover);
+
+        .tool-card:hover {
+            border-color: #ABC649;
+            box-shadow: 0 8px 24px rgba(171, 198, 73, 0.15);
+            transform: translateY(-4px);
         }
-        
-        .card-header {
-            margin-bottom: var(--space-xl);
-        }
-        
-        .card-title {
-            font-family: var(--font-heading);
-            font-size: var(--font-size-3xl);
-            font-weight: 700;
-            color: var(--color-text);
-            line-height: 1.1;
-            margin-bottom: var(--space-md);
-            text-transform: uppercase;
-            letter-spacing: 0.05rem;
-        }
-        
-        .card-badge {
-            display: inline-block;
-            padding: var(--space-sm) var(--space-lg);
-            border-radius: 4px;
-            font-size: var(--font-size-xs);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05rem;
-            background: var(--color-primary);
-            color: var(--color-text);
-        }
-        
-        .card-metadata {
-            margin-bottom: var(--space-xl);
-        }
-        
-        .metadata-row {
+
+        .tool-header {
             display: flex;
-            align-items: center;
-            margin-bottom: var(--space-md);
-            gap: var(--space-lg);
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
         }
-        
-        .metadata-label {
-            font-size: var(--font-size-sm);
+
+        .tool-name {
+            font-size: 28px;
+            font-weight: 800;
+            color: #000;
+            line-height: 1.2;
+        }
+
+        .tool-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.05rem;
-            min-width: 120px;
+            letter-spacing: 0.5px;
         }
-        
+
+        .badge-exemplar {
+            background: #ABC649;
+            color: white;
+        }
+
+        .badge-strong {
+            background: #2196F3;
+            color: white;
+        }
+
+        .tool-category {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #ABC649;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .tool-description {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Gatekeeper Badges */
+        .gatekeeper-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .gk-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .gk-badge::before {
+            content: '✓';
+        }
+
+        /* Rating Rows */
+        .tool-ratings {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding: 16px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rating-row {
+            display: grid;
+            grid-template-columns: 120px auto 1fr;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .rating-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+        }
+
         .rating-bars {
             display: flex;
-            gap: var(--space-xs);
-            flex: 1;
+            gap: 4px;
         }
-        
+
         .rating-bar {
             width: 20px;
-            height: 16px;
-            background: var(--color-bar-filled);
+            height: 12px;
+            background: #ABC649;
+            border-radius: 2px;
         }
-        
+
         .rating-bar.empty {
-            background: var(--color-bar-empty);
+            background: #e0e0e0;
         }
-        
-        .metadata-value {
-            font-size: var(--font-size-sm);
-            color: var(--color-text-light);
-            flex: 1;
+
+        .rating-value {
+            font-size: 13px;
+            color: #333;
         }
-        
-        .card-description {
-            font-size: var(--font-size-base);
-            color: var(--color-text-light);
-            line-height: 1.6;
-            margin-bottom: var(--space-xl);
+
+        /* Standouts Section */
+        .tool-standouts {
+            background: #f9f9f9;
+            padding: 16px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ABC649;
         }
-        
-        .card-exemplar {
-            font-size: var(--font-size-sm);
-            font-weight: 700;
+
+        .standouts-label {
+            font-size: 11px;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.05rem;
-            margin-bottom: var(--space-sm);
+            letter-spacing: 1px;
+            color: #ABC649;
+            margin-bottom: 6px;
         }
-        
-        .exemplar-text {
-            font-size: var(--font-size-base);
-            color: var(--color-text-light);
+
+        .standouts-text {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* Score Display */
+        .tool-score-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .weighted-score {
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .score-number {
+            font-size: 24px;
+            color: #ABC649;
+        }
+
+        /* Footer Links */
+        .tool-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+
+        .tool-link {
+            font-size: 13px;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+
+        .tool-link:hover {
+            color: #ABC649;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 60px 40px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 60px 40px;
+            font-size: 18px;
+            color: #666;
+            grid-column: 1 / -1;
+        }
+
+        /* Methodology Section */
+        .methodology-section {
+            background: #f5f5f5;
+            padding: 80px 40px;
+        }
+
+        .methodology-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dimensions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .dimension-card {
+            background: #fff;
+            border: 3px solid #000;
+            padding: 28px;
+        }
+
+        .dimension-number {
+            font-family: 'Anton', sans-serif;
+            font-size: 48px;
+            color: #ABC649;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .dimension-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 18px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dimension-weight {
+            font-size: 12px;
+            font-weight: 700;
+            color: #ABC649;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dimension-desc {
+            font-size: 14px;
+            color: #555;
             line-height: 1.6;
         }
-        
-        /* ========================================
-           RESPONSIVE DESIGN
-           ======================================== */
-        
-        /* Tablet (max-width: 1023px) */
-        @media (max-width: 1023px) {
-            :root {
-                --font-size-hero: 4rem;
+
+        /* Gatekeepers Section */
+        .gatekeepers-section {
+            background: #000;
+            color: #fff;
+            padding: 80px 40px;
+        }
+
+        .gatekeepers-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gatekeepers-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .gatekeepers-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 50px;
+        }
+
+        .gatekeeper-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .gatekeeper-card {
+            border: 2px solid #ABC649;
+            padding: 28px;
+        }
+
+        .gatekeeper-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .gatekeeper-name {
+            font-family: 'Anton', sans-serif;
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #ABC649;
+        }
+
+        .gatekeeper-desc {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Evidence Tiers */
+        .evidence-section {
+            background: #fff;
+            padding: 80px 40px;
+        }
+
+        .evidence-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .evidence-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .evidence-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .tier-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 140px;
+            gap: 24px;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tier-row:last-child {
+            border-bottom: none;
+        }
+
+        .tier-number {
+            font-family: 'Anton', sans-serif;
+            font-size: 36px;
+            color: #ABC649;
+        }
+
+        .tier-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .tier-info p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .tier-ceiling {
+            text-align: right;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .tier-ceiling strong {
+            display: block;
+            font-size: 18px;
+            color: #000;
+        }
+
+        /* Footer */
+        .footer {
+            background: #ABC649;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #000;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
             }
-            
-            .lock-icon {
-                width: 140px;
-                height: 200px;
+
+            .dimensions-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            
-            .cards-grid {
-                gap: var(--space-2xl);
+
+            .gatekeeper-grid {
+                grid-template-columns: 1fr;
             }
         }
-        
-        /* Mobile (<768px) */
-        @media (max-width: 767px) {
-            :root {
-                --font-size-hero: 3rem;
-                --font-size-3xl: 1.5rem;
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 24px 30px;
             }
-            
-            .hero {
-                padding: var(--space-3xl) var(--space-xl);
-            }
-            
+
             .logo-section {
                 flex-direction: column;
                 align-items: center;
-                gap: var(--space-xl);
+                gap: 15px;
             }
-            
-            .lock-icon {
-                width: 100px;
-                height: 140px;
-            }
-            
+
             .brand-text {
                 text-align: center;
             }
-            
+
+            .brand-vault {
+                font-size: 72px;
+            }
+
             .brand-the {
-                font-size: var(--font-size-xl);
+                font-size: 24px;
             }
-            
+
+            .lock-icon {
+                width: 60px;
+                height: 60px;
+            }
+
             .tagline {
-                font-size: var(--font-size-sm);
+                font-size: 14px;
             }
-            
+
             .main-nav {
                 flex-direction: column;
-                align-items: stretch;
+                align-items: center;
             }
-            
+
             .nav-btn {
+                width: 100%;
+                max-width: 280px;
                 text-align: center;
             }
-            
-            .cards-section {
-                padding: var(--space-3xl) var(--space-lg);
+
+            .tools-section {
+                padding: 40px 24px 60px;
             }
-            
-            .cards-grid {
+
+            .tool-name {
+                font-size: 24px;
+            }
+
+            .dimensions-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-2xl);
             }
-            
-            .card {
-                padding: var(--space-xl);
+
+            .rating-row {
+                grid-template-columns: 1fr;
+                gap: 6px;
             }
-            
-            .card-title {
-                font-size: var(--font-size-2xl);
+
+            .tier-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 12px;
             }
-            
-            .metadata-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: var(--space-sm);
-            }
-            
-            .metadata-label {
-                min-width: auto;
-            }
-        }
-        
-        /* ========================================
-           ACCESSIBILITY & UTILITY CLASSES
-           ======================================== */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-        
-        /* Focus visible for keyboard navigation */
-        *:focus-visible {
-            outline: 2px solid var(--color-primary);
-            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
-    
-    <!-- Hero Section -->
-    <header class="hero" role="banner">
-        <div class="hero-container">
-            <div class="logo-section">
-                <svg class="lock-icon" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lock icon representing security and trust">
-                    <!-- Lock body -->
-                    <rect x="50" y="180" width="200" height="200" rx="8" fill="#000"/>
-                    <!-- Shackle -->
-                    <path d="M 80 180 L 80 120 Q 80 40, 150 40 Q 220 40, 220 120 L 220 180" 
-                          stroke="#000" stroke-width="30" fill="none" stroke-linecap="square"/>
-                    <!-- Keyhole - outer circle -->
-                    <circle cx="150" cy="250" r="30" fill="#F5F5DC"/>
-                    <!-- Keyhole - slot -->
-                    <rect x="135" y="250" width="30" height="80" rx="4" fill="#F5F5DC"/>
-                    <!-- Keyhole - pointed bottom -->
-                    <polygon points="135,330 165,330 150,350" fill="#F5F5DC"/>
-                </svg>
-                <div class="brand-text">
-                    <div class="brand-the">THE PEDAGOGICAL</div>
-                    <h1 class="brand-vault">VAULT</h1>
-                </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-section">
+            <svg class="lock-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <rect x="15" y="45" width="70" height="50" rx="5" fill="#000"/>
+                <path d="M 30 45 L 30 30 Q 30 10, 50 10 Q 70 10, 70 30 L 70 45" 
+                      stroke="#000" stroke-width="10" fill="none"/>
+                <circle cx="50" cy="62" r="8" fill="#fff"/>
+                <rect x="47" y="62" width="6" height="18" fill="#fff"/>
+            </svg>
+            <div class="brand-text">
+                <div class="brand-the">THE PEDAGOGICAL</div>
+                <div class="brand-vault">VAULT</div>
             </div>
-            
-            <div class="accent-bar" role="presentation" aria-hidden="true"></div>
-            
-            <p class="tagline">RIGOROUS EDTECH EVALUATIONS: EVIDENCE-BASED AI TOOLS FOR INSTRUCTIONAL DESIGN, LEARNING, AND EQUITY</p>
-            
-            <nav class="main-nav" role="navigation" aria-label="Main navigation">
-                <a href="#about" class="nav-btn">About</a>
-                <a href="#categories" class="nav-btn">Categories</a>
-                <a href="#methodology" class="nav-btn">Methodology</a>
-            </nav>
         </div>
+        
+        <div class="accent-bar"></div>
+        
+        <p class="tagline">Rigorous EdTech Evaluations: Evidence-Based AI Tools for Instructional Design, Learning, and Equity</p>
+        
+        <nav class="main-nav">
+            <a href="#methodology" class="nav-btn">Methodology</a>
+            <a href="#tools" class="nav-btn">Browse Tools</a>
+            <a href="#gatekeepers" class="nav-btn">Gatekeepers</a>
+        </nav>
     </header>
-    
-    <!-- Card Grid Section -->
-    <main id="categories">
-        <section class="cards-section" aria-labelledby="tools-heading">
-            <div class="cards-container">
-                <h2 id="tools-heading" class="section-title">Educational Categories</h2>
+
+    <!-- Vault Promise Banner -->
+    <div class="vault-promise">
+        <p class="promise-text">🔒 Every tool in the Vault has <strong>passed all 4 gatekeepers</strong> and scored <strong>70+ on our weighted rubric</strong>. No junk. Just tools that put learning first.</p>
+    </div>
+
+    <!-- Filters Section -->
+    <section class="filters-section" id="tools">
+        <h2 class="filters-title">VAULT-APPROVED TOOLS</h2>
+        <div class="filters">
+            <button class="filter-btn active" data-category="all">All Tools</button>
+            <button class="filter-btn" data-category="Learning Experience Designers">Learning Experience Designers</button>
+            <button class="filter-btn" data-category="Assessment & Feedback Innovators">Assessment & Feedback</button>
+            <button class="filter-btn" data-category="Learning Analytics & Data Insights">Analytics & Data</button>
+            <button class="filter-btn" data-category="Inclusive Learning Aids">Inclusive Learning</button>
+            <button class="filter-btn" data-category="Multilingual Learning Allies">Multilingual</button>
+            <button class="filter-btn" data-category="Educator Copilots">Educator Copilots</button>
+            <button class="filter-btn" data-category="AI Tutors & Student Mentors">AI Tutors</button>
+            <button class="filter-btn" data-category="Family/Community Connect">Family/Community</button>
+            <button class="filter-btn" data-category="Simulation / PBL">Simulation / PBL</button>
+        </div>
+    </section>
+
+    <!-- Tools Grid -->
+    <section class="tools-section">
+        <p class="tools-count" id="toolsCount"></p>
+        <div class="tools-grid" id="toolsGrid">
+            <div class="loading">Loading tools...</div>
+        </div>
+    </section>
+
+    <!-- Gatekeepers Section -->
+    <section class="gatekeepers-section" id="gatekeepers">
+        <div class="gatekeepers-container">
+            <h2 class="gatekeepers-title">THE FOUR GATEKEEPERS</h2>
+            <p class="gatekeepers-subtitle">Every tool must pass ALL four gatekeepers before we even score it. Fail one = not in the Vault.</p>
+            
+            <div class="gatekeeper-grid">
+                <div class="gatekeeper-card">
+                    <div class="gatekeeper-icon">♿</div>
+                    <h3 class="gatekeeper-name">Accessibility</h3>
+                    <p class="gatekeeper-desc">Meets WCAG 2.1 AA standards. Has current VPAT. Works with screen readers, captions, and keyboard navigation.</p>
+                </div>
                 
-                <div class="cards-grid">
-                    
-                    <!-- Card 1: Instructional Blueprints -->
-                    <article class="card" aria-labelledby="card1-title">
-                        <div class="card-header">
-                            <h3 id="card1-title" class="card-title">INSTRUCTIONAL BLUEPRINTS</h3>
-                            <span class="card-badge">LEARNING EXPERIENCE DESIGNERS</span>
-                        </div>
-                        
-                        <div class="card-metadata">
-                            <div class="metadata-row">
-                                <span class="metadata-label">COST</span>
-                                <div class="rating-bars" aria-label="Cost rating: 4 out of 5">
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar empty"></div>
-                                </div>
-                            </div>
-                            <div class="metadata-row">
-                                <span class="metadata-label">DATA PRACTICES</span>
-                                <div class="metadata-value">Strong - FERPA compliant</div>
-                            </div>
-                            <div class="metadata-row">
-                                <span class="metadata-label">EVIDENCE LINKS</span>
-                                <div class="metadata-value">Tier 2 - Internal studies</div>
-                            </div>
-                        </div>
-                        
-                        <p class="card-description">
-                            Produces project-based lesson sequences with UDL-aligned pedagogical strategies.
-                        </p>
-                        
-                        <div class="card-exemplar">EXEMPLARY BECAUSE</div>
-                        <p class="exemplar-text">
-                            Integrates evidence-based instructional design principles with accessibility frameworks.
-                        </p>
-                    </article>
-                    
-                    <!-- Card 2: Learning Analytics & Data Insights -->
-                    <article class="card" aria-labelledby="card2-title">
-                        <div class="card-header">
-                            <h3 id="card2-title" class="card-title">LEARNING ANALYTICS & DATA INSIGHTS</h3>
-                            <span class="card-badge">LEARNING ANALYTICS & DATA INSIGHTS</span>
-                        </div>
-                        
-                        <div class="card-metadata">
-                            <div class="metadata-row">
-                                <span class="metadata-label">COST</span>
-                                <div class="rating-bars" aria-label="Cost rating: 5 out of 5">
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                </div>
-                            </div>
-                            <div class="metadata-row">
-                                <span class="metadata-label">DATA PRACTICES</span>
-                                <div class="metadata-value">Excellent - Privacy first</div>
-                            </div>
-                            <div class="metadata-row">
-                                <span class="metadata-label">EVIDENCE LINKS</span>
-                                <div class="metadata-value">Tier 3 - Peer reviewed</div>
-                            </div>
-                        </div>
-                        
-                        <p class="card-description">
-                            Synthesizes learning data from multiple sources to provide evidence-based insights.
-                        </p>
-                        
-                        <div class="card-exemplar">EXEMPLARY BECAUSE</div>
-                        <p class="exemplar-text">
-                            Uses transparent algorithms and provides actionable recommendations for educators.
-                        </p>
-                    </article>
-                    
-                    <!-- Card 3: Inclusive Learning Aids -->
-                    <article class="card" aria-labelledby="card3-title">
-                        <div class="card-header">
-                            <h3 id="card3-title" class="card-title">INCLUSIVE LEARNING AIDS</h3>
-                            <span class="card-badge">INCLUSIVE LEARNING AIDS</span>
-                        </div>
-                        
-                        <div class="card-metadata">
-                            <div class="metadata-row">
-                                <span class="metadata-label">COST</span>
-                                <div class="rating-bars" aria-label="Cost rating: 3 out of 5">
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar empty"></div>
-                                    <div class="rating-bar empty"></div>
-                                </div>
-                            </div>
-                            <div class="metadata-row">
-                                <span class="metadata-label">DATA PRACTICES</span>
-                                <div class="metadata-value">Strong - IDEA compliant</div>
-                            </div>
-                            <div class="metadata-row">
-                                <span class="metadata-label">EVIDENCE LINKS</span>
-                                <div class="metadata-value">Tier 2 - Mixed methods</div>
-                            </div>
-                        </div>
-                        
-                        <p class="card-description">
-                            Produces strategies to support diverse learners with accommodations and modifications.
-                        </p>
-                        
-                        <div class="card-exemplar">EXEMPLARY BECAUSE</div>
-                        <p class="exemplar-text">
-                            Aligns with IEP requirements and provides evidence-based intervention strategies.
-                        </p>
-                    </article>
-                    
-                    <!-- Card 4: AI Tutors & Student Mentors -->
-                    <article class="card" aria-labelledby="card4-title">
-                        <div class="card-header">
-                            <h3 id="card4-title" class="card-title">AI TUTORS & STUDENT MENTORS</h3>
-                            <span class="card-badge">AI TUTORS & STUDENT MENTORS</span>
-                        </div>
-                        
-                        <div class="card-metadata">
-                            <div class="metadata-row">
-                                <span class="metadata-label">COST</span>
-                                <div class="rating-bars" aria-label="Cost rating: 5 out of 5">
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                    <div class="rating-bar"></div>
-                                </div>
-                            </div>
-                            <div class="metadata-row">
-                                <span class="metadata-label">DATA PRACTICES</span>
-                                <div class="metadata-value">Strong - Transparent AI</div>
-                            </div>
-                            <div class="metadata-row">
-                                <span class="metadata-label">EVIDENCE LINKS</span>
-                                <div class="metadata-value">Tier 3 - RCT studies</div>
-                            </div>
-                        </div>
-                        
-                        <p class="card-description">
-                            Offers personalized writing feedback, study tips, and just-in-time support.
-                        </p>
-                        
-                        <div class="card-exemplar">EXEMPLARY BECAUSE</div>
-                        <p class="exemplar-text">
-                            Provides scaffolded support with clear explanations and promotes metacognition.
-                        </p>
-                    </article>
-                    
+                <div class="gatekeeper-card">
+                    <div class="gatekeeper-icon">🔐</div>
+                    <h3 class="gatekeeper-name">Privacy & Security</h3>
+                    <p class="gatekeeper-desc">Clear student-data-protective policies. Data minimization, encryption, DPA availability, and incident response protocols.</p>
+                </div>
+                
+                <div class="gatekeeper-card">
+                    <div class="gatekeeper-icon">🤖</div>
+                    <h3 class="gatekeeper-name">Responsible AI</h3>
+                    <p class="gatekeeper-desc">AI use is labeled and explainable. Bias is audited. Teachers can override AI decisions. Guardrails are in place.</p>
+                </div>
+                
+                <div class="gatekeeper-card">
+                    <div class="gatekeeper-icon">🛡️</div>
+                    <h3 class="gatekeeper-name">Content & Safety</h3>
+                    <p class="gatekeeper-desc">Age-appropriate content with no harmful or manipulative patterns. No dark patterns. Student safety first.</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="methodology-section" id="methodology">
+        <div class="methodology-container">
+            <h2 class="section-title">EVALUATION METHODOLOGY</h2>
+            <p class="section-subtitle">Every tool is evaluated across six research-backed dimensions with weighted scoring to ensure pedagogical integrity.</p>
+            
+            <div class="dimensions-grid">
+                <div class="dimension-card">
+                    <div class="dimension-number">01</div>
+                    <div class="dimension-title">Learning Design Integrity</div>
+                    <div class="dimension-weight">Weight: 25%</div>
+                    <div class="dimension-desc">Is the tool instructionally sound and aligned with learning science?</div>
+                </div>
+                
+                <div class="dimension-card">
+                    <div class="dimension-number">02</div>
+                    <div class="dimension-title">Instructional Efficacy</div>
+                    <div class="dimension-weight">Weight: 20%</div>
+                    <div class="dimension-desc">Is there credible evidence that it improves learning outcomes?</div>
+                </div>
+                
+                <div class="dimension-card">
+                    <div class="dimension-number">03</div>
+                    <div class="dimension-title">Feedback & Assessment</div>
+                    <div class="dimension-weight">Weight: 15%</div>
+                    <div class="dimension-desc">Does it provide meaningful, actionable feedback to learners and teachers?</div>
+                </div>
+                
+                <div class="dimension-card">
+                    <div class="dimension-number">04</div>
+                    <div class="dimension-title">Equity & Access</div>
+                    <div class="dimension-weight">Weight: 15%</div>
+                    <div class="dimension-desc">Can all students — regardless of background, ability, or language — benefit from it?</div>
+                </div>
+                
+                <div class="dimension-card">
+                    <div class="dimension-number">05</div>
+                    <div class="dimension-title">Tech & Ethical Design</div>
+                    <div class="dimension-weight">Weight: 15%</div>
+                    <div class="dimension-desc">Is the tool ethically built, transparent, and user-safe?</div>
+                </div>
+                
+                <div class="dimension-card">
+                    <div class="dimension-number">06</div>
+                    <div class="dimension-title">Integration & Usability</div>
+                    <div class="dimension-weight">Weight: 10%</div>
+                    <div class="dimension-desc">Does it integrate smoothly into classrooms and teacher workflows?</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evidence Tiers Section -->
+    <section class="evidence-section" id="evidence">
+        <div class="evidence-container">
+            <h2 class="evidence-title">EVIDENCE TIERS</h2>
+            <p class="evidence-subtitle">A tool's evidence tier caps how high it can score on Efficacy. Marketing hype can't overcome lack of research.</p>
+            
+            <div class="tier-row">
+                <div class="tier-number">0</div>
+                <div class="tier-info">
+                    <h4>Marketing Claims Only</h4>
+                    <p>No independent evidence of effectiveness</p>
+                </div>
+                <div class="tier-ceiling">Max Efficacy: <strong>1</strong></div>
+            </div>
+            
+            <div class="tier-row">
+                <div class="tier-number">1</div>
+                <div class="tier-info">
+                    <h4>Practitioner Anecdotes</h4>
+                    <p>Teacher testimonials, case studies</p>
+                </div>
+                <div class="tier-ceiling">Max Efficacy: <strong>2</strong></div>
+            </div>
+            
+            <div class="tier-row">
+                <div class="tier-number">2</div>
+                <div class="tier-info">
+                    <h4>Internal Pilot</h4>
+                    <p>Company-conducted studies or pilots</p>
+                </div>
+                <div class="tier-ceiling">Max Efficacy: <strong>3</strong></div>
+            </div>
+            
+            <div class="tier-row">
+                <div class="tier-number">3</div>
+                <div class="tier-info">
+                    <h4>Quasi-Experimental</h4>
+                    <p>Independent research with comparison groups</p>
+                </div>
+                <div class="tier-ceiling">Max Efficacy: <strong>4</strong></div>
+            </div>
+            
+            <div class="tier-row">
+                <div class="tier-number">4-5</div>
+                <div class="tier-info">
+                    <h4>RCT or Meta-Analysis</h4>
+                    <p>Gold-standard randomized controlled trials</p>
+                </div>
+                <div class="tier-ceiling">Max Efficacy: <strong>5</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">© 2025 The Pedagogical Vault — A curated arsenal of AI tools that put learning first.</p>
+    </footer>
+
+    <script>
+    // ============================================
+    // CONFIGURATION
+    // ============================================
     
+    // WEIGHTS (25/20/15/15/15/10)
+    const WEIGHTS = {
+        ldi: 0.25,
+        efficacy: 0.20,
+        fa: 0.15,
+        equity: 0.15,
+        tech: 0.15,
+        integr: 0.10
+    };
+
+    // EVIDENCE TIER CAPS
+    const EFFICACY_CAPS = {
+        0: 1,  // Marketing claims only
+        1: 2,  // Practitioner anecdotes
+        2: 3,  // Internal pilot
+        3: 4,  // Quasi-experimental
+        4: 5,  // RCT
+        5: 5   // Meta-analysis
+    };
+
+    // MINIMUM SCORE TO BE IN VAULT
+    const MIN_SCORE = 70;
+
+    // Google Sheets CSV URL
+    const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQyeK5htBLv-v9F0E5S8s39fp9DoMWocHz63gGYQEgKYly4X0xYGpAfbyJvxHpiYfhPsvSmAZ2NKbba/pub?output=csv';
+
+    // ============================================
+    // SAMPLE DATA (All 45 tools - used as backup)
+    // ============================================
+    const sampleTools = [
+        // Learning Experience Designers (5)
+        { name: "Nearpod", category: "Learning Experience Designers", audience: "both", description: "Interactive lessons and formative checks for K-12 with VR field trips.", standouts: "Real-time feedback and gamification with strong engagement features.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Eduaide.AI", category: "Learning Experience Designers", audience: "teacher", description: "AI-powered tool for educators to create resources and assessments.", standouts: "Purpose-built for teachers with strong pedagogical frameworks.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - Education-focused", dataRating: "4", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "5", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Canva for Education", category: "Learning Experience Designers", audience: "both", description: "Visual design platform with templates for presentations and learning materials.", standouts: "Intuitive interface and extensive template library with collaboration.", cost: "Free for K-12", costRating: "5", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Pear Deck", category: "Learning Experience Designers", audience: "both", description: "Interactive presentation tool that transforms slides into formative assessments.", standouts: "Real-time student responses and teacher dashboard for engagement tracking.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "BookCreator", category: "Learning Experience Designers", audience: "both", description: "Digital book creation platform for student-authored multimedia content.", standouts: "UDL-aligned with multiple means of expression and accessibility features.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - COPPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        
+        // Assessment & Feedback Innovators (5)
+        { name: "Turnitin", category: "Assessment & Feedback Innovators", audience: "teacher", description: "Plagiarism detection and AI writing detection with formative feedback.", standouts: "Industry standard for academic integrity with writing feedback tools.", cost: "District license required", costRating: "2", dataPractices: "Strong - SOC 2 compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "5", equity: "4", tech: "4", integr: "3", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Gradescope", category: "Assessment & Feedback Innovators", audience: "teacher", description: "AI-assisted grading for assignments exams and coding projects.", standouts: "Dramatically reduces grading time with rubric-based consistency.", cost: "Subscription or institutional", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "5", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Formative", category: "Assessment & Feedback Innovators", audience: "both", description: "Real-time formative assessment with live student response tracking.", standouts: "Immediate feedback loops and intervention tools for teachers.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "5", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Kami", category: "Assessment & Feedback Innovators", audience: "both", description: "PDF annotation and digital worksheet tool with accessibility features.", standouts: "Screen reader compatible with voice comments and real-time collaboration.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Flipgrid", category: "Assessment & Feedback Innovators", audience: "both", description: "Video discussion platform for student voice and reflection.", standouts: "Reduces barriers for shy students with async video responses.", cost: "Free", costRating: "5", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        
+        // Learning Analytics & Data Insights (5)
+        { name: "Clever Analytics", category: "Learning Analytics & Data Insights", audience: "teacher", description: "Unified dashboard for app usage and engagement across district tools.", standouts: "Privacy-first design with rostering integration and usage insights.", cost: "District pricing", costRating: "3", dataPractices: "Strong - SOC 2 Type II", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "3", efficacy: "3", fa: "4", equity: "4", tech: "5", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Panorama Education", category: "Learning Analytics & Data Insights", audience: "teacher", description: "SEL and school climate surveys with actionable data dashboards.", standouts: "Research-validated instruments with equity-focused disaggregation.", cost: "District pricing", costRating: "2", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "PowerSchool Analytics", category: "Learning Analytics & Data Insights", audience: "teacher", description: "Comprehensive SIS analytics with early warning indicators.", standouts: "Cohort tracking and intervention management with privacy controls.", cost: "District pricing", costRating: "2", dataPractices: "Strong - SOC 2 compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "3", efficacy: "3", fa: "4", equity: "4", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Illuminate Education", category: "Learning Analytics & Data Insights", audience: "teacher", description: "Assessment and data platform with standards-aligned reporting.", standouts: "Item analysis and growth tracking with demographic breakdowns.", cost: "District pricing", costRating: "2", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "EdFi Alliance", category: "Learning Analytics & Data Insights", audience: "teacher", description: "Open-source data standard for K-12 education interoperability.", standouts: "Vendor-neutral with strong data governance framework.", cost: "Free open source", costRating: "5", dataPractices: "Strong - Privacy by design", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "3", efficacy: "3", fa: "3", equity: "4", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        
+        // Inclusive Learning Aids (5)
+        { name: "Texthelp Read&Write", category: "Inclusive Learning Aids", audience: "student", description: "Literacy support toolbar with text-to-speech and writing assistance.", standouts: "WCAG-compliant with dyslexia-friendly features and vocabulary support.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "5", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Bookshare", category: "Inclusive Learning Aids", audience: "student", description: "Accessible ebook library for students with print disabilities.", standouts: "Largest collection of accessible titles with multiple format options.", cost: "Free for qualifying students", costRating: "5", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "5", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Learning Ally", category: "Inclusive Learning Aids", audience: "student", description: "Human-narrated audiobook library for students with reading barriers.", standouts: "High-quality narration with curriculum-aligned content.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "5", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Snap&Read", category: "Inclusive Learning Aids", audience: "student", description: "Screenshot reader and text leveling tool for struggling readers.", standouts: "Works on any digital content with translation and study tools.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Immersive Reader", category: "Inclusive Learning Aids", audience: "both", description: "Microsoft reading accessibility tool with focus mode and translation.", standouts: "Built into Microsoft 365 with offline support and 100+ languages.", cost: "Free with Microsoft 365", costRating: "5", dataPractices: "Strong - Microsoft compliance", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "5", tech: "5", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        
+        // Multilingual Learning Allies (5)
+        { name: "Ellevation", category: "Multilingual Learning Allies", audience: "both", description: "ELL progress monitoring and instructional planning platform.", standouts: "Research-based strategies with native language support.", cost: "District pricing", costRating: "2", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "5", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Imagine Learning", category: "Multilingual Learning Allies", audience: "student", description: "Adaptive language and literacy program for English learners.", standouts: "Personalized pathways with native language scaffolding.", cost: "District pricing", costRating: "2", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 4", evidenceRating: "5", ldi: "5", efficacy: "5", fa: "4", equity: "5", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "TransACT", category: "Multilingual Learning Allies", audience: "teacher", description: "Parent communication translation in 100+ languages.", standouts: "Legally compliant translations with cultural adaptation.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Listenwise", category: "Multilingual Learning Allies", audience: "both", description: "Podcast-based listening comprehension for ELLs and all students.", standouts: "Authentic content with scaffolded supports and assessments.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "5", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Microsoft Translator", category: "Multilingual Learning Allies", audience: "both", description: "Real-time translation for classroom conversations and content.", standouts: "Live captioning with 100+ languages and offline mode.", cost: "Free", costRating: "5", dataPractices: "Strong - Microsoft compliance", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "5", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        
+        // Educator Copilots (5)
+        { name: "MagicSchool AI", category: "Educator Copilots", audience: "teacher", description: "AI assistant for lesson planning and instructional content creation.", standouts: "60+ tools purpose-built for educators with guardrails.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - Education-focused", dataRating: "4", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "5", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Diffit", category: "Educator Copilots", audience: "teacher", description: "AI tool for adapting texts to different reading levels.", standouts: "Instant differentiation with vocabulary and comprehension supports.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "5", efficacy: "3", fa: "4", equity: "5", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Curipod", category: "Educator Copilots", audience: "teacher", description: "AI-powered interactive lesson generator with student engagement.", standouts: "Creates discussion-based lessons with formative checks.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "SchoolAI", category: "Educator Copilots", audience: "teacher", description: "AI teaching assistant with customizable student-facing spaces.", standouts: "Teacher controls AI interactions with learning guardrails.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Brisk Teaching", category: "Educator Copilots", audience: "teacher", description: "Chrome extension AI for feedback and curriculum adaptation.", standouts: "Works inside existing tools with quick actions.", cost: "Free", costRating: "5", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 1", evidenceRating: "2", ldi: "4", efficacy: "2", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        
+        // AI Tutors & Student Mentors (5)
+        { name: "Khanmigo", category: "AI Tutors & Student Mentors", audience: "student", description: "Khan Academy AI tutor using Socratic dialogue method.", standouts: "Guided discovery approach with strong pedagogical foundation.", cost: "$44/year or district", costRating: "4", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "5", efficacy: "3", fa: "5", equity: "4", tech: "5", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Photomath", category: "AI Tutors & Student Mentors", audience: "student", description: "Camera-based math solver with step-by-step explanations.", standouts: "Shows work with multiple solution methods and conceptual hints.", cost: "Freemium available", costRating: "4", dataPractices: "Moderate - Review terms", dataRating: "3", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "3", tech: "3", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Synthesis Tutor", category: "AI Tutors & Student Mentors", audience: "student", description: "AI math tutor focused on collaborative problem-solving.", standouts: "Game-based with peer collaboration and growth mindset focus.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - COPPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "5", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Quill", category: "AI Tutors & Student Mentors", audience: "student", description: "AI-powered writing and grammar practice with immediate feedback.", standouts: "Research-backed with sentence-level practice and progress tracking.", cost: "Free", costRating: "5", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "5", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        { name: "Carnegie Learning", category: "AI Tutors & Student Mentors", audience: "student", description: "Adaptive math curriculum with AI tutoring and live instruction.", standouts: "Research-proven with equity focus and teacher support.", cost: "District pricing", costRating: "2", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 4", evidenceRating: "5", ldi: "5", efficacy: "5", fa: "5", equity: "5", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        
+        // Family/Community Connect (5)
+        { name: "ParentSquare", category: "Family/Community Connect", audience: "both", description: "Unified family communication platform with translation.", standouts: "Two-way messaging in 100+ languages with engagement tracking.", cost: "District pricing", costRating: "2", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "5", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Remind", category: "Family/Community Connect", audience: "both", description: "Messaging app for teacher-family communication with translation.", standouts: "Simple interface with privacy controls and scheduled messages.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "5", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "ClassDojo", category: "Family/Community Connect", audience: "both", description: "Behavior and communication platform with family engagement.", standouts: "Real-time updates with translation and multimedia sharing.", cost: "Free", costRating: "5", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Seesaw", category: "Family/Community Connect", audience: "both", description: "Digital portfolio platform with family messaging and translation.", standouts: "Student-created content shared with families in multiple languages.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - COPPA/FERPA", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "TalkingPoints", category: "Family/Community Connect", audience: "both", description: "AI-powered family messaging with human-quality translation.", standouts: "Reaches families without smartphones via SMS with 100+ languages.", cost: "Free for teachers", costRating: "5", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "4", efficacy: "4", fa: "4", equity: "5", tech: "5", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "TRUE", gk_content: "TRUE", isAI: "TRUE" },
+        
+        // Simulation / PBL (5)
+        { name: "Labster", category: "Simulation / PBL", audience: "student", description: "Virtual science labs with immersive simulations.", standouts: "Full lab experiences without equipment with immediate feedback.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "PhET Simulations", category: "Simulation / PBL", audience: "student", description: "Free interactive math and science simulations from CU Boulder.", standouts: "Research-based with accessibility features and teacher resources.", cost: "Free", costRating: "5", dataPractices: "Strong - No data collected", dataRating: "5", evidenceTier: "Tier 4", evidenceRating: "5", ldi: "5", efficacy: "5", fa: "4", equity: "5", tech: "5", integr: "5", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Gizmos", category: "Simulation / PBL", audience: "student", description: "Interactive STEM simulations with inquiry-based lessons.", standouts: "400+ simulations with assessment and lesson materials.", cost: "Subscription required", costRating: "3", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 3", evidenceRating: "4", ldi: "5", efficacy: "4", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "Minecraft Education", category: "Simulation / PBL", audience: "student", description: "Game-based learning environment for cross-curricular projects.", standouts: "Engaging platform with collaboration and coding integration.", cost: "Included with Microsoft 365", costRating: "5", dataPractices: "Strong - Microsoft compliance", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" },
+        { name: "BioDigital Human", category: "Simulation / PBL", audience: "student", description: "3D interactive anatomy and health visualization platform.", standouts: "Medical-grade accuracy with accessibility and curriculum alignment.", cost: "Freemium available", costRating: "4", dataPractices: "Strong - FERPA compliant", dataRating: "5", evidenceTier: "Tier 2", evidenceRating: "3", ldi: "4", efficacy: "3", fa: "4", equity: "4", tech: "4", integr: "4", gk_accessibility: "TRUE", gk_privacy: "TRUE", gk_ai: "N/A", gk_content: "TRUE", isAI: "FALSE" }
+    ];
+
+    // ============================================
+    // HELPER FUNCTIONS
+    // ============================================
+    
+    // Check if tool passes all gatekeepers
+    function passesGatekeepers(tool) {
+        const accessibility = tool.gk_accessibility?.toUpperCase() === 'TRUE';
+        const privacy = tool.gk_privacy?.toUpperCase() === 'TRUE';
+        const content = tool.gk_content?.toUpperCase() === 'TRUE';
+        
+        // AI gatekeeper only required if tool is AI-powered
+        const isAI = tool.isAI?.toUpperCase() === 'TRUE';
+        const aiGatekeeper = tool.gk_ai?.toUpperCase();
+        const aiPasses = !isAI || aiGatekeeper === 'TRUE' || aiGatekeeper === 'N/A';
+        
+        return accessibility && privacy && content && aiPasses;
+    }
+
+    // Get efficacy cap based on evidence tier
+    function getEfficacyCap(tierString) {
+        // Extract number from tier string like "Tier 2 - Internal Pilot" or just "2"
+        const match = tierString?.toString().match(/\d/);
+        const tier = match ? parseInt(match[0]) : 0;
+        return EFFICACY_CAPS[tier] || 1;
+    }
+
+    // Calculate weighted score with efficacy capping
+    function calculateScore(tool) {
+        const ldi = parseFloat(tool.ldi) || 0;
+        let efficacy = parseFloat(tool.efficacy) || 0;
+        const fa = parseFloat(tool.fa) || 0;
+        const equity = parseFloat(tool.equity) || 0;
+        const tech = parseFloat(tool.tech) || 0;
+        const integr = parseFloat(tool.integr) || 0;
+        
+        // Cap efficacy based on evidence tier
+        const cap = getEfficacyCap(tool.evidenceTier || tool.evidenceRating);
+        efficacy = Math.min(efficacy, cap);
+        
+        // Calculate weighted score (0-5)
+        const weightedScore = (
+            ldi * WEIGHTS.ldi +
+            efficacy * WEIGHTS.efficacy +
+            fa * WEIGHTS.fa +
+            equity * WEIGHTS.equity +
+            tech * WEIGHTS.tech +
+            integr * WEIGHTS.integr
+        );
+        
+        // Convert to 0-100
+        return Math.round(weightedScore * 20);
+    }
+
+    // Get badge based on score
+    function getBadge(score) {
+        if (score >= 85) return { text: 'Exemplar', class: 'badge-exemplar' };
+        if (score >= 70) return { text: 'Strong', class: 'badge-strong' };
+        return null; // Won't be shown anyway
+    }
+
+    // Generate rating bars HTML
+    function ratingBars(count) {
+        const num = parseInt(count) || 0;
+        let html = '<div class="rating-bars">';
+        for (let i = 1; i <= 5; i++) {
+            html += `<div class="rating-bar ${i <= num ? '' : 'empty'}"></div>`;
+        }
+        html += '</div>';
+        return html;
+    }
+
+    // Generate gatekeeper badges
+    function gatekeeperBadges(tool) {
+        let badges = [];
+        if (tool.gk_accessibility?.toUpperCase() === 'TRUE') badges.push('Accessible');
+        if (tool.gk_privacy?.toUpperCase() === 'TRUE') badges.push('Privacy');
+        if (tool.gk_ai?.toUpperCase() === 'TRUE') badges.push('Responsible AI');
+        if (tool.gk_content?.toUpperCase() === 'TRUE') badges.push('Safe Content');
+        
+        return badges.map(b => `<span class="gk-badge">${b}</span>`).join('');
+    }
+
+    // Generate tool card HTML
+    function createToolCard(tool) {
+        const score = calculateScore(tool);
+        const badge = getBadge(score);
+        
+        return `
+            <div class="tool-card" data-category="${tool.category}" data-audience="${tool.audience}">
+                <div class="tool-header">
+                    <h2 class="tool-name">${tool.name}</h2>
+                    ${badge ? `<span class="tool-badge ${badge.class}">${badge.text}</span>` : ''}
+                </div>
+                <span class="tool-category">${tool.category}</span>
+                
+                <div class="gatekeeper-row">
+                    ${gatekeeperBadges(tool)}
+                </div>
+                
+                <p class="tool-description">${tool.description}</p>
+                
+                <div class="tool-ratings">
+                    <div class="rating-row">
+                        <span class="rating-label">Cost</span>
+                        ${ratingBars(tool.costRating)}
+                        <span class="rating-value">${tool.cost}</span>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-label">Data Practices</span>
+                        ${ratingBars(tool.dataRating)}
+                        <span class="rating-value">${tool.dataPractices}</span>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-label">Evidence Tier</span>
+                        ${ratingBars(tool.evidenceRating)}
+                        <span class="rating-value">${tool.evidenceTier}</span>
+                    </div>
+                </div>
+
+                <div class="tool-standouts">
+                    <div class="standouts-label">Stand-Outs</div>
+                    <div class="standouts-text">${tool.standouts}</div>
+                </div>
+
+                <div class="tool-score-row">
+                    <span class="weighted-score">Weighted Score:</span>
+                    <span class="score-number">${score}/100</span>
+                </div>
+
+                <div class="tool-footer">
+                    <a href="#" class="tool-link">Full Evaluation →</a>
+                    <a href="#" class="tool-link">Evidence Links →</a>
+                </div>
+            </div>
+        `;
+    }
+
+    // Parse CSV from Google Sheets
+    function parseCSV(csv) {
+        const lines = csv.split('\n');
+        const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+        const tools = [];
+        
+        for (let i = 1; i < lines.length; i++) {
+            if (!lines[i].trim()) continue;
+            
+            const values = [];
+            let current = '';
+            let inQuotes = false;
+            
+            for (let char of lines[i]) {
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    values.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            values.push(current.trim());
+            
+            const tool = {};
+            headers.forEach((header, index) => {
+                tool[header] = values[index] || '';
+            });
+            
+            if (tool.name) tools.push(tool);
+        }
+        
+        return tools;
+    }
+
+    // Filter tools for the Vault (must pass gatekeepers AND score 70+)
+    function filterForVault(tools) {
+        return tools.filter(tool => {
+            const passes = passesGatekeepers(tool);
+            const score = calculateScore(tool);
+            return passes && score >= MIN_SCORE;
+        });
+    }
+
+    // Render tools to grid
+    function renderTools(tools) {
+        const grid = document.getElementById('toolsGrid');
+        const count = document.getElementById('toolsCount');
+        
+        if (tools.length === 0) {
+            grid.innerHTML = '<div class="no-results">No tools found matching your filter.</div>';
+            count.textContent = '';
+            return;
+        }
+        
+        count.textContent = `Showing ${tools.length} Vault-approved tool${tools.length === 1 ? '' : 's'}`;
+        grid.innerHTML = tools.map(createToolCard).join('');
+    }
+
+    // Filter by category
+    function filterByCategory(tools, category) {
+        if (category === 'all') return tools;
+        return tools.filter(t => t.category === category);
+    }
+
+    // ============================================
+    // MAIN INITIALIZATION
+    // ============================================
+    let vaultTools = [];
+
+    async function loadTools() {
+        const grid = document.getElementById('toolsGrid');
+        let allTools = [];
+        let usingSheets = false;
+        
+        // Try to load from Google Sheets
+        if (SHEET_URL && SHEET_URL !== 'YOUR_GOOGLE_SHEET_CSV_URL_HERE') {
+            try {
+                console.log('Attempting to load from Google Sheets...');
+                const response = await fetch(SHEET_URL);
+                if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                }
+                const csv = await response.text();
+                allTools = parseCSV(csv);
+                usingSheets = true;
+                console.log('✅ Loaded from Google Sheets:', allTools.length, 'tools');
+            } catch (error) {
+                console.log('⚠️ Google Sheets unavailable, using built-in data. Error:', error.message);
+                console.log('This is normal if viewing locally or if sheet access is restricted.');
+                allTools = sampleTools;
+            }
+        } else {
+            console.log('No Google Sheet configured, using built-in sample data');
+            allTools = sampleTools;
+        }
+        
+        // Filter for Vault (gatekeepers + score)
+        vaultTools = filterForVault(allTools);
+        console.log('Vault-approved tools:', vaultTools.length, usingSheets ? '(from Google Sheets)' : '(built-in data)');
+        
+        renderTools(vaultTools);
+    }
+
+    // Set up filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const category = btn.dataset.category;
+            const filtered = filterByCategory(vaultTools, category);
+            renderTools(filtered);
+        });
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', loadTools);
+    </script>
 </body>
 </html>
