@@ -20,6 +20,7 @@
             /* Colors */
             --color-primary: #ABC649;
             --color-primary-dark: #8fa935;
+            --color-secondary: #2196F3;
             --color-text: #000000;
             --color-text-light: #333333;
             --color-text-muted: #666666;
@@ -247,6 +248,14 @@
             white-space: nowrap;
         }
         
+        .card-badge.badge-exemplar {
+            background: var(--color-primary);
+        }
+        
+        .card-badge.badge-strong {
+            background: var(--color-secondary);
+        }
+        
         .card-category {
             display: inline-block;
             font-size: var(--font-size-xs);
@@ -407,8 +416,8 @@
                 <rect x="47" y="62" width="6" height="18" fill="#fff"/>
             </svg>
             <div class="brand-text">
-                <div class="brand-the" aria-label="The Pedagogical">THE PEDAGOGICAL</div>
-                <h1 class="brand-vault" aria-label="Vault">VAULT</h1>
+                <div class="brand-the">THE PEDAGOGICAL</div>
+                <h1 class="brand-vault">VAULT</h1>
             </div>
         </div>
         
@@ -428,13 +437,13 @@
         <section class="cards-section" aria-labelledby="tools-heading">
             <h2 id="tools-heading" class="section-title">VAULT-APPROVED TOOLS</h2>
             
-            <div class="cards-grid" role="list">
+            <div class="cards-grid">
                 
                 <!-- Card 1: Khanmigo -->
-                <article class="card" role="listitem" aria-labelledby="card1-title">
+                <article class="card" aria-labelledby="card1-title">
                     <div class="card-header">
                         <h3 id="card1-title" class="card-title">Khanmigo</h3>
-                        <span class="card-badge" aria-label="Exemplar rating">Exemplar</span>
+                        <span class="card-badge badge-exemplar" aria-label="Exemplar rating">Exemplar</span>
                     </div>
                     <span class="card-category">AI Tutors</span>
                     <p class="card-description">
@@ -450,10 +459,10 @@
                 </article>
                 
                 <!-- Card 2: Gradescope -->
-                <article class="card" role="listitem" aria-labelledby="card2-title">
+                <article class="card" aria-labelledby="card2-title">
                     <div class="card-header">
                         <h3 id="card2-title" class="card-title">Gradescope</h3>
-                        <span class="card-badge" aria-label="Strong rating">Strong</span>
+                        <span class="card-badge badge-strong" aria-label="Strong rating">Strong</span>
                     </div>
                     <span class="card-category">Assessment / Grading</span>
                     <p class="card-description">
@@ -469,10 +478,10 @@
                 </article>
                 
                 <!-- Card 3: Nearpod -->
-                <article class="card" role="listitem" aria-labelledby="card3-title">
+                <article class="card" aria-labelledby="card3-title">
                     <div class="card-header">
                         <h3 id="card3-title" class="card-title">Nearpod</h3>
-                        <span class="card-badge" aria-label="Strong rating">Strong</span>
+                        <span class="card-badge badge-strong" aria-label="Strong rating">Strong</span>
                     </div>
                     <span class="card-category">Learning Experience</span>
                     <p class="card-description">
@@ -488,10 +497,10 @@
                 </article>
                 
                 <!-- Card 4: Turnitin -->
-                <article class="card" role="listitem" aria-labelledby="card4-title">
+                <article class="card" aria-labelledby="card4-title">
                     <div class="card-header">
                         <h3 id="card4-title" class="card-title">Turnitin</h3>
-                        <span class="card-badge" aria-label="Strong rating">Strong</span>
+                        <span class="card-badge badge-strong" aria-label="Strong rating">Strong</span>
                     </div>
                     <span class="card-category">Academic Integrity</span>
                     <p class="card-description">
